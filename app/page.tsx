@@ -19,7 +19,6 @@ export default function Home() {
         body: newFormData,
       });
 
-      // 서버 응답을 확인합니다.
       if (!res.ok) {
         throw new Error(`HTTP 에러! 상태 코드: ${res.status}`);
       }
