@@ -1,3 +1,5 @@
+import Input from "@/components/Input";
+
 export default function Home() {
   async function createPost(formData: any) {
     "use server";
@@ -33,15 +35,16 @@ export default function Home() {
   return (
     <div className="w-full">
       <form action={createPost}>
-        <input type="text" name="nm" />
+        <Input label="이름" name="name" type="text" placeholder="Email" />
+        {/* <input type="text" name="nm" />
         <input type="text" name="gender" />
         <input type="number" name="weight" />
         <input type="text" name="character" />
         <input type="text" name="condition" />
         <input type="text" name="rescue_location" />
         <input type="text" name="desc" />
-        <input type="file" name="image" />
-        <button>전송</button>
+        <input type="file" name="image" /> */}
+        <button type="submit">전송</button>
       </form>
     </div>
   );
