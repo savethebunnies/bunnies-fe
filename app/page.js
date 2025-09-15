@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -23,5 +24,9 @@ export default function Home() {
     }
     getPost();
   }, []);
-  return <div></div>;
+  return (
+    <div>
+      <Button>버튼</Button>
+    </div>
+  );
 }
