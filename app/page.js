@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useEffect } from "react";
-
+import Arrow from "@/public/arrow-right.svg";
 export default function Home() {
   useEffect(() => {
     async function getPost() {
@@ -26,7 +26,10 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <Button>버튼</Button>
+      <Button>
+        <span>유기토끼 만나러 가기</span>
+        <Arrow aria-hidden="true" />
+      </Button>
     </div>
   );
 }

@@ -2,16 +2,16 @@ import { cva } from "class-variance-authority";
 import cn from "@/libs/utils/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all ",
+  "inline-flex items-center text-base justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-all cursor-pointer",
   {
     variants: {
       variant: {
-        default: "bg-[var(--green)]",
+        default: "bg-[var(--primary)] text-white",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        default: "h-12 px-5 has-[>svg:last-child]:pr-3",
+        sm: "h-10 px-4 has-[>svg]:pr-2.5 text-sm",
+        lg: "h-14 px-6 has-[>svg]:pr-4 text-xl ",
         icon: "size-9",
       },
     },
