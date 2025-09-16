@@ -1,5 +1,5 @@
 import { cva } from "class-variance-authority";
-import cn from "/libs/utils/cn";
+import cn from "@/libs/utils/cn";
 
 const buttonVariants = cva(
   "inline-flex items-center text-base justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-all cursor-pointer",

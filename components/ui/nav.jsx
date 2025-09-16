@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import { Button } from "./button";
 
 export function Nav() {
@@ -11,11 +10,12 @@ export function Nav() {
             src="/logo.png"
             height={50}
             width={130}
+            className="w-33 h-auto"
             alt="세이브 더 버니즈 로고"
           ></Image>
         </h1>
         <Button size="icon" variant="ghost" className="absolute right-6">
-          <img src="/burger.svg" alt="" className="size-4" />
+          <img src="/burger.svg" aria-hidden="true" />
         </Button>
       </div>
     </nav>
