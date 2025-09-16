@@ -5,6 +5,7 @@
   --foreground: #171717;
 
   --primary: #2e7b10;
+  --nav-height: 5rem;
 }
 
 @theme inline {

@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`mx-auto max-w-2xl ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`mx-auto ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Nav />
         {children}
