@@ -1,6 +1,5 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Arrow from "@/public/arrow-right.svg";
+import { Button } from "@/components/ui/button";
 
 export default function Page() {
   return (
@@ -42,7 +41,7 @@ export default function Page() {
 
           <Button>
             유기토끼 만나러 가기
-            <Arrow aria-hidden="true" />
+            <img src="/arrow-right.svg" alt="" className="size-4" />
           </Button>
         </div>
       </section>

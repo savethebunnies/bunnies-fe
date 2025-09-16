@@ -8,17 +8,13 @@ const nextConfig = {
       },
     ];
   },
-  webpack(config) {
-    config.module.rules.push({
+  webpack(config, { dev }) {
+    if (dev) config.cache = false;
+
+    config.module.rules.unshift({
       test: /\.svg$/i,
-      oneOf: [
-        {
-          issuer: /\.[jt]sx?$/,
-          resourceQuery: { not: [/url/] },
-          use: ["@svgr/webpack"],
-        }, // <Icon />
-        { type: "asset/resource" }, // icon.svg?url  → URL 문자열
-      ],
+      issuer: /\.[jt]sx?$/,
+      use: ["@svgr/webpack"],
     });
     return config;
   },

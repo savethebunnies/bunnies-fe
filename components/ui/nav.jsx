@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Burger from "@/public/burger.svg";
+
 import { Button } from "./button";
 
 export function Nav() {
@@ -15,7 +15,7 @@ export function Nav() {
           ></Image>
         </h1>
         <Button size="icon" variant="ghost" className="absolute right-6">
-          <Burger aria-hidden="true" />
+          <img src="/burger.svg" alt="" className="size-4" />
         </Button>
       </div>
     </nav>
