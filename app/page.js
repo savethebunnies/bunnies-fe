@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import Arrow from "@/public/arrow-right.svg";
 import Image from "next/image";
+
 export default function Home() {
   useEffect(() => {
     async function getPost() {
@@ -60,6 +61,7 @@ export default function Home() {
               행동으로 이어집니다
             </p>
           </div>
+
           <Button>
             유기토끼 만나러 가기
             <Arrow aria-hidden="true" />
