@@ -3,8 +3,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-
   --primary: #2e7b10;
+  --green-50: #f4f9f4;
+  --green-100: #ddebdd;
+  --green-200: #d1e2d0;
+  --green-300: #accbaa;
+  --green-400: #7fab7d;
+  --green-500: #5c8d5a;
+  --green-600: #497247;
+  --green-700: #3c5b3a;
+  --green-800: #314a31;
+  --green-900: #2b3c2a;
+  --green-950: #132013;
   --nav-height: 5rem;
 }
 
@@ -24,6 +34,6 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--green-950);
   font-family: Arial, Helvetica, sans-serif;
 }

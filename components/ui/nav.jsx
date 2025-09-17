@@ -3,8 +3,8 @@ import { Button } from "./button";
 
 export function Nav() {
   return (
-    <nav>
-      <div className="py-4 px-6 flex justify-center items-center">
+    <nav className="fixed top-0 w-full z-5">
+      <div className="py-4 px-6 flex justify-center items-center bg-white ">
         <h1 className="">
           <Image
             src="/logo.png"
