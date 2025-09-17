@@ -1,3 +1,5 @@
+import Container from "@/components/ui/container";
+
 export default function Home() {
   // useEffect(() => {
   //   async function getPost() {
@@ -19,11 +21,9 @@ export default function Home() {
   //   getPost();
   // }, []);
   return (
-    <div className="h-[calc(100vh-var(--nav-height))] relative">
-      <div className="flex flex-col items-center justify-center text-center absolute top-1/3 w-full">
-        <div className="bg-[url('/rabbit_01.png')] w-25 h-25 bg-contain"></div>
-        <p className="">준비중입니다! 곧 만나요!</p>
-      </div>
-    </div>
+    <Container>
+      <div className="bg-[url('/rabbit_01.png')] w-25 h-25 bg-contain"></div>
+      <p className="">준비중입니다! 곧 만나요!</p>
+    </Container>
   );
 }
