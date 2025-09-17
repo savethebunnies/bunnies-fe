@@ -7,6 +7,8 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-[var(--primary)] text-white",
+        outline:
+          "bg-transparent text-[var(--primary)] border-2 border-[var(--primary)] font-bold",
         ghost: "bg-white",
       },
       size: {

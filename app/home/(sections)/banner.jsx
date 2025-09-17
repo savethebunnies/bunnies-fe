@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Banner() {
   return (
@@ -11,7 +12,7 @@ export default function Banner() {
         세이브 더 버니즈 배너
       </h2>
 
-      <div className="text-center rounded-lg border-2 mx-4 border-white bg-white/30 w-full relative pb-9">
+      <div className="text-center rounded-lg border-2 max-w-screen-lg  mx-4 md:mx-auto border-white bg-white/30 w-full relative pb-9">
         <div className="h-18 w-18 overflow-hidden bg-white flex items-center justify-center rounded-full absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Image
             src="/logo_s.png"
@@ -39,8 +40,10 @@ export default function Banner() {
         </div>
 
         <Button>
-          유기토끼 만나러 가기
-          <img src="/arrow-right.svg" aria-hidden="true" />
+          <Link href="/adaption" className="flex gap-2">
+            유기토끼 만나러 가기
+            <img src="/arrow-right.svg" aria-hidden="true" />
+          </Link>
         </Button>
       </div>
     </section>

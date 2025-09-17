@@ -4,7 +4,7 @@ export default function Card() {
   return (
     <article className="rounded-lg overflow-hidden border border-[var(--green-200)]">
       <div className="aspect-square relative">
-        <span className="absolute right-0 z-1 bg-[var(--green-600)] text-[#FFEF09] px-3 py-1.5 text-sm rounded-bl-lg">
+        <span className="absolute right-0 z-1 bg-[var(--green-600)] text-[#FFEF09] px-3 py-1.5 text-xs rounded-bl-lg">
           임보 중
         </span>
         <Image

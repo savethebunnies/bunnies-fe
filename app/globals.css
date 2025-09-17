@@ -16,6 +16,7 @@
   --green-900: #2b3c2a;
   --green-950: #132013;
   --nav-height: 5rem;
+  --section-py: 4.5em;
 }
 
 @theme inline {
