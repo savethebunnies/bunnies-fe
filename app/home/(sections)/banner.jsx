@@ -6,13 +6,13 @@ export default function Banner() {
   return (
     <section
       aria-labelledby="stb-banner-heading"
-      className="bg-[url('/bg_pc.png')] h-[calc(100dvh)] bg-cover bg-bottom-right bg-no-repeat flex items-center justify-center"
+      className="bg-[url('/bg_pc.png')] h-[calc(100vh)] bg-cover bg-bottom-right bg-no-repeat flex items-center justify-center"
     >
       <h2 id="stb-banner-heading" className="sr-only">
         세이브 더 버니즈 배너
       </h2>
 
-      <div className="text-center rounded-lg border-2 max-w-screen-lg  mx-4 md:mx-auto border-white bg-white/30 w-full relative pb-9">
+      <div className="text-center rounded-lg border-2 max-w-screen-lg mx-4 md:mx-auto border-white bg-white/30 w-full relative pb-9">
         <div className="h-18 w-18 overflow-hidden bg-white flex items-center justify-center rounded-full absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Image
             src="/logo_s.png"

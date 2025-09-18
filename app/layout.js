@@ -20,7 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
         className={`mx-auto ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
