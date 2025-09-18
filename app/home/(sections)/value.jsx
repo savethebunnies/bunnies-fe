@@ -38,7 +38,7 @@ export default function Value() {
         }
         subtitle="세더버는 아래의 가치를 중심으로 활동하고 있어요!"
       >
-        <div className="grid gap-2 sm:grid-cols-3 items-stretch mt-9">
+        <div className="grid gap-2 lg:grid-cols-3 items-stretch mt-9">
           {values.map((value, idx) => {
             return (
               <ValueCard value={value} idx={idx + 1} key={`card-${idx}`} />

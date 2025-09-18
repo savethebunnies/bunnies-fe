@@ -15,9 +15,12 @@ export default function Adaption() {
         heading="가족을 기다리고 있어요"
         subtitle="하나뿐인 가족이 되어주세요"
       >
-        <div className="grid grid-cols-2 gap-2 py-9 sm:grid-cols-4">
-          <Card />
-          <Card />
+        <div className="py-9">
+          <div className="grid grid-flow-col auto-cols-[50%] sm:auto-cols-[25%] gap-2 overflow-x-auto snap-x snap-mandatory">
+            <Card />
+            <Card />
+            <Card />
+          </div>
         </div>
         <Button variant="outline" className="border-[var(--green-300)]">
           <Link href="/adaption">입양공고 더보러 가기</Link>

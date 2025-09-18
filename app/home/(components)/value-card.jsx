@@ -11,7 +11,7 @@ export default function ValueCard({ value, idx }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, delay: 0 }}
     >
-      <article className="bg-white py-6 px-5 rounded-lg border border-[var(--green-200)]  h-full">
+      <article className="snap-start bg-white py-6 px-5 rounded-lg border border-[var(--green-200)]  h-full">
         <div className="grid grid-rows-[1fr_1fr] h-full">
           <div className="mx-auto flex items-center justify-center">
             <Image
