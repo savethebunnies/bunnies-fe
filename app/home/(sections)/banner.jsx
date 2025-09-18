@@ -6,7 +6,7 @@ export default function Banner() {
   return (
     <section
       aria-labelledby="stb-banner-heading"
-      className="bg-[url('/bg_pc.png')] h-[calc(100vh)] bg-cover bg-bottom-right bg-no-repeat flex items-center justify-center"
+      className="bg-[url('/bg_pc.png')] h-[calc(100dvh)] bg-cover bg-bottom-right bg-no-repeat flex items-center justify-center"
     >
       <h2 id="stb-banner-heading" className="sr-only">
         세이브 더 버니즈 배너

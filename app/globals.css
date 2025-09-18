@@ -37,4 +37,6 @@ body {
   background: var(--background);
   color: var(--green-950);
   font-family: Arial, Helvetica, sans-serif;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }

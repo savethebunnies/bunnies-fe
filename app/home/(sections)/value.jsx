@@ -5,12 +5,12 @@ const values = [
   {
     imageData: { image: "/rabbit_01.png", width: "130", height: "140" },
     title: "토끼에 대한 올바른 인식 확산",
-    desc: "토끼도 깊은 교감이 가능한 소중한 반려동물입니다.\n 무지에서 비롯된 방사·유기·학대가 사라지는 세상을 꿈꿉니다.",
+    desc: "토끼도 깊은 교감이 가능한 소중한 반려동물입니다.\n 무지에서 비롯된 방사·유기·학대가 사라지는 세상을 꿈꿉니다",
   },
   {
     imageData: { image: "/rabbit_02.png", width: "190", height: "190" },
     title: "책임감 있는 입양 문화 조성",
-    desc: "입양은 끝이 아닌 시작입니다.\n 입양 후에도 지속적인 소통을 통해 토끼들의 안부를 확인하고,\n 어려움이 생기면 함께 해결책을 찾아갑니다.",
+    desc: "입양은 끝이 아닌 시작입니다.\n 입양 후에도 지속적인 소통을 통해 토끼들의 안부를 확인하고, 어려움이 생기면 함께 해결책을 찾아갑니다",
   },
   {
     imageData: { image: "/rabbit_03.png", width: "160", height: "140" },
@@ -38,7 +38,7 @@ export default function Value() {
         }
         subtitle="세더버는 아래의 가치를 중심으로 활동하고 있어요!"
       >
-        <div className="grid grid-rows-3 gap-2 mt-9">
+        <div className="grid gap-2 mt-9">
           {values.map((value, idx) => {
             return (
               <ValueCard value={value} idx={idx + 1} key={`card-${idx}`} />
