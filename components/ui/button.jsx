@@ -9,7 +9,7 @@ const buttonVariants = cva(
         default: "bg-[var(--primary)] text-white",
         outline:
           "bg-transparent text-[var(--primary)] border-2 border-[var(--primary)] font-bold",
-        ghost: "bg-white",
+        ghost: "bg-transparent",
       },
       size: {
         default: "h-12 px-6 has-[>svg:last-child]:pr-3",
