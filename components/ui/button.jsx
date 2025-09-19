@@ -12,7 +12,7 @@ const buttonVariants = cva(
         ghost: "bg-transparent",
       },
       size: {
-        default: "h-12 px-6 has-[>svg:last-child]:pr-3",
+        default: "h-12 px-6 has-[>svg]:pr-3",
         sm: "h-10 px-4 has-[>svg]:pr-2.5 text-sm",
         lg: "h-14 px-6 has-[>svg]:pr-4 text-xl ",
         icon: "size-9",

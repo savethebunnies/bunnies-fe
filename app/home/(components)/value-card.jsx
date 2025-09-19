@@ -30,7 +30,6 @@ export default function ValueCard({ value, idx }) {
               </span>
               <h4 className=" text-white font-semibold ">{title}</h4>
             </div>
-
             <p className="text-sm whitespace-pre-line pt-3">{desc}</p>
           </div>
         </div>

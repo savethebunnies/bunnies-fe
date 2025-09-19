@@ -29,7 +29,7 @@ export default function Value() {
             <span
               aria-hidden="true"
               lang="en"
-              className="block text-base text-[var(--primary)]"
+              className="block text-base text-[var(--primary)] font-black"
             >
               Save the Bunnies
             </span>

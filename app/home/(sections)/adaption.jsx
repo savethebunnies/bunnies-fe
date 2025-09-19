@@ -16,7 +16,7 @@ export default function Adaption() {
         subtitle="하나뿐인 가족이 되어주세요"
       >
         <div className="py-9">
-          <div className="grid grid-flow-col auto-cols-[50%] sm:auto-cols-[25%] gap-2 overflow-x-auto snap-x snap-mandatory">
+          <div className="grid grid-flow-col auto-cols-[calc((100%_-_0.5rem)/2)] sm:auto-cols-[25%] gap-2  overflow-x-auto snap-x snap-mandatory box-border">
             <Card />
             <Card />
             <Card />

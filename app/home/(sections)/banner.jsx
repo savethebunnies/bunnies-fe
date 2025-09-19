@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import FloatBtn from "../(components)/float-btn";
 
 export default function Banner() {
   return (
@@ -9,7 +10,10 @@ export default function Banner() {
         세이브 더 버니즈 배너
       </h2>
       <div className="min-h-[calc(100vh_-_var(--nav-height))] supports-[min-height:100svh]:min-h-[calc(100svh_-_var(--nav-height))] mt-[var(--nav-height)] w-full bg-[url('/bg_mo.png')] sm:bg-[url('/bg_pc.png')] bg-cover bg-right-bottom bg-no-repeat flex items-center justify-center">
-        <div className="text-center rounded-lg border-2 max-w-screen-lg mx-4 md:mx-auto border-white bg-white/30 w-full relative pb-9">
+        <div
+          className="text-center rounded-lg max-w-screen-lg mx-4 md:mx-auto 
+           backdrop-blur-[2px] bg-white/35 border-2 border-white/70 w-full relative pb-9"
+        >
           <div className="h-18 w-18 overflow-hidden bg-white flex items-center justify-center rounded-full absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <Image
               src="/logo_s.png"
@@ -19,7 +23,7 @@ export default function Banner() {
             />
           </div>
           <div className="pt-18 pb-12">
-            <p className="mb-5">
+            <p className="mb-5 font-semibold text-[var(--hover)] relative after:content-[''] after:absolute after:left-1/2 after:-top-1 after:-translate-y-0 after:-translate-x-1/2 after:w-75 after:h-24 after:-z-10 after:bg-[url('/underline.png')] after:bg-contain after:bg-no-repeat">
               세이브 더 버니즈는
               <br />
               누구나 참여할 수 있는 열린 공동체입니다
@@ -35,13 +39,7 @@ export default function Banner() {
               행동으로 이어집니다
             </p>
           </div>
-
-          <Button>
-            <Link href="/adaption" className="flex gap-2">
-              유기토끼 만나러 가기
-              <img src="/arrow-right.svg" aria-hidden="true" />
-            </Link>
-          </Button>
+          <FloatBtn />
         </div>
       </div>
     </section>

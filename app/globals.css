@@ -31,7 +31,12 @@
 // <weight>: Use a value from 100 to 900
 // <uniquifier>: Use a unique and descriptive class name
 
-
+.noto-sans-kr-<uniquifier> {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 
 */
 /* @media (prefers-color-scheme: dark) {
@@ -45,6 +50,8 @@ body {
   background: var(--background);
   color: var(--green-950);
   font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
