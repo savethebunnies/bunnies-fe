@@ -4,7 +4,7 @@ import { Button } from "./button";
 export function Nav() {
   return (
     <nav className="fixed top-0 w-full z-20">
-      <div className="py-4 px-6 flex justify-center items-center bg-white ">
+      <div className="py-4 px-6 flex justify-center items-center bg-white">
         <h1 className="">
           <Image
             src="/logo.png"

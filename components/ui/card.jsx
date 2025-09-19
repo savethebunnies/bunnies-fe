@@ -4,9 +4,9 @@ export default function Card() {
   return (
     <article className="rounded-lg overflow-hidden border border-[var(--green-200)]">
       <div className="aspect-square overflow-hidden relative">
-        <span className="absolute right-0 bg-[var(--green-600)] border-b border-l border-[var(--green-200)] z-10 font-bold text-[#FFEF09] px-3 py-1.5 text-xs rounded-bl-lg">
-          임보 중
-        </span>
+        <div className="absolute right-1 top-2 bg-[var(--green-800)]/80 z-10 font-bold text-[#FFEF09] px-3 py-2 text-xs rounded-full flex items-center justify-center">
+          <span className="leading-none relative top-[0.5px]">임보 중</span>
+        </div>
         <Image
           src="/sample.png"
           fill
@@ -15,11 +15,11 @@ export default function Card() {
         />
       </div>
       <div className="text-left text-sm p-3 bg-white">
-        <p className="flex items-center gap-1 mb-2">
-          <span className="text-base font-bold">성훈이</span>
-          <span className="bg-[#BBC9FF] px-2 py-0.5 rounded-2xl text-xs">
-            남아
-          </span>
+        <p className="flex items-center gap-1 mb-2 leading-none">
+          <span className="text-base font-bold relative top-[1px]">성훈이</span>
+          <div className="bg-[#BBC9FF] px-2 py-1 rounded-full text-xs">
+            <span className="relative top-[0.5px]">남아</span>
+          </div>
         </p>
         <p>
           나이: <span>2000년생 추정</span>

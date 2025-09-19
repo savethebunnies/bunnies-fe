@@ -25,10 +25,12 @@ export default function ValueCard({ value, idx }) {
           {/* 텍스트 */}
           <div>
             <div className="w-fit flex items-center justify-center bg-[var(--green-600)] p-1 pr-5 rounded-full mx-auto mt-2">
-              <span className=" left-1 w-6 h-6 rounded-full inline-block font-bold bg-white text-[var(--green-600)] mr-3">
-                {idx}
-              </span>
-              <h4 className=" text-white font-semibold ">{title}</h4>
+              <p className=" left-1 w-6 h-6 rounded-full font-bold bg-white text-[var(--green-600)] mr-3 flex items-center justify-center">
+                <span className="leading-none relative top-[1px]"> {idx}</span>
+              </p>
+              <h4 className=" text-white font-semibold leading-none flex items-center justify-center relative top-[1px]">
+                {title}
+              </h4>
             </div>
             <p className="text-sm whitespace-pre-line pt-3">{desc}</p>
           </div>

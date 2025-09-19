@@ -23,7 +23,7 @@ export default function Banner() {
             />
           </div>
           <div className="pt-18 pb-12">
-            <p className="mb-5 font-semibold text-[var(--hover)] relative after:content-[''] after:absolute after:left-1/2 after:-top-1 after:-translate-y-0 after:-translate-x-1/2 after:w-75 after:h-24 after:-z-10 after:bg-[url('/underline.png')] after:bg-contain after:bg-no-repeat">
+            <p className="mb-5 font-semibold text-[var(--hover)]">
               세이브 더 버니즈는
               <br />
               누구나 참여할 수 있는 열린 공동체입니다
