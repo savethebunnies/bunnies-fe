@@ -1,9 +1,11 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --primary: #2e7b10;
+  --hover: #185c11;
   --green-50: #f4f9f4;
   --green-100: #ddebdd;
   --green-200: #d1e2d0;
@@ -25,7 +27,13 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+/* 
+// <weight>: Use a value from 100 to 900
+// <uniquifier>: Use a unique and descriptive class name
 
+
+
+*/
 /* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -36,7 +44,7 @@
 body {
   background: var(--background);
   color: var(--green-950);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
