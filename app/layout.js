@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body
-        className={`mx-auto ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`mx-auto mt-[var(--nav-height)] ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* <NextAuthSessionProvider> */}
         <Nav />
