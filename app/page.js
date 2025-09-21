@@ -1,4 +1,4 @@
-import ContentCenter from "@/components/ui/containers";
+import { ContentCenter } from "@/components/ui/containers";
 
 export default function Home() {
   // useEffect(() => {
