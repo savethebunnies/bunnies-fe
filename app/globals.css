@@ -19,7 +19,9 @@
   --green-950: #132013;
   --nav-height: 4.8rem;
   --section-py: 4.5em;
+  --m-inline: 1rem;
 }
+
 /* 메뉴바 오픈 시 스크롤 잠금 설정 */
 html:has(#nav[data-open="true"]) {
   overflow: hidden;
@@ -32,6 +34,16 @@ html:has(#nav[data-open="true"]) {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
+@layer components {
+  .text-heading {
+    @apply text-xl font-extrabold;
+  }
+  .side-margin {
+    @apply mx-4 md:mx-auto;
+  }
+}
+
 /* 
 // <weight>: Use a value from 100 to 900
 // <uniquifier>: Use a unique and descriptive class name

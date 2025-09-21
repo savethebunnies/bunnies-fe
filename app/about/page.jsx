@@ -1,9 +1,11 @@
-import Container from "@/components/ui/container";
+import Footer from "@/components/ui/footer";
+import About from "./(sections)/about";
 
 export default function Page() {
   return (
-    <Container>
-      <p>준비중입니다</p>
-    </Container>
+    <>
+      <About />
+      <Footer />
+    </>
   );
 }

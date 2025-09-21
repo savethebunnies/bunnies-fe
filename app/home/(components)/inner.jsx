@@ -9,7 +9,7 @@ export default function Inner({ children, section, heading, subtitle }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5, delay: 0 }}
     >
-      <div className="py-[var(--section-py)] mx-4 text-center max-w-screen-lg md:mx-auto">
+      <div className="py-[var(--section-py)] side-margin text-center max-w-screen-lg">
         <h2
           id={`${section}-heading`}
           className="text-xl font-semibold mb-2 inline-block relative"
