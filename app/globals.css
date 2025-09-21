@@ -23,7 +23,7 @@
 }
 
 /* 메뉴바 오픈 시 스크롤 잠금 설정 */
-html:has(#nav[data-open="true"]) {
+html:has(#nav-menus[data-open="true"]) {
   overflow: hidden;
   height: 100dvh;
 }
@@ -41,6 +41,12 @@ html:has(#nav[data-open="true"]) {
   }
   .side-margin {
     @apply mx-4 md:mx-auto;
+  }
+  .text-15 {
+    font-size: 0.9375rem;
+  }
+  .text-17 {
+    font-size: 1.0625rem;
   }
 }
 

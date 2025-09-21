@@ -22,7 +22,7 @@ export default function Inner({ children, section, heading, subtitle }) {
             </div>
           )}
         </h2>
-        <p id={`${section}-subtitle`} className="text-[0.9375rem] mt-1">
+        <p id={`${section}-subtitle`} className="text-15 mt-1">
           {subtitle}
         </p>
         {children}

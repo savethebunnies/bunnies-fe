@@ -28,11 +28,11 @@ export default function ValueCard({ value, idx }) {
               <p className=" left-1 w-6 h-6 rounded-full font-bold bg-white text-[var(--green-600)] mr-3 flex items-center justify-center">
                 <span className="leading-none relative top-[1px]"> {idx}</span>
               </p>
-              <h4 className=" text-white font-semibold leading-none flex items-center justify-center relative top-[1px]">
+              <h4 className="text-base text-white font-semibold leading-none flex items-center justify-center relative top-[1px]">
                 {title}
               </h4>
             </div>
-            <p className="text-base whitespace-pre-line pt-3">{desc}</p>
+            <p className="text-15 whitespace-pre-line pt-3">{desc}</p>
           </div>
         </div>
       </article>
