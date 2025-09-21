@@ -10,7 +10,7 @@ export default function About() {
     >
       <div className="grid grid-rows-[auto_auto] gap-2">
         <div className="bg-white py-6 px-4 rounded-lg">
-          <p className="text-xl font-bold text-[var(--primary)] mb-4">
+          <p className="text-lg font-bold text-[var(--primary)] mb-4">
             세이브더 버니즈(세더버)는 유기토끼를 지원하는 작은 봉사
             커뮤니티입니다.
           </p>
@@ -61,10 +61,10 @@ export default function About() {
               aria-hidden="true"
               className="mx-auto mb-4"
             />
-            <h2 className="text-2xl font-black" lang="en">
+            <h2 className="text-xl font-black" lang="en">
               Save the Bunnies
             </h2>
-            <p className="text-lg">세이브 더 버니즈</p>
+            <p className="text-base">세이브 더 버니즈</p>
           </div>
         </div>
       </div>

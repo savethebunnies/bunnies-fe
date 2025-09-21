@@ -32,7 +32,7 @@ export default function ValueCard({ value, idx }) {
                 {title}
               </h4>
             </div>
-            <p className="text-sm whitespace-pre-line pt-3">{desc}</p>
+            <p className="text-base whitespace-pre-line pt-3">{desc}</p>
           </div>
         </div>
       </article>

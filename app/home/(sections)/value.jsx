@@ -5,7 +5,7 @@ const values = [
   {
     imageData: { image: "/rabbit_01.png", width: "130" },
     title: "토끼에 대한 올바른 인식 확산",
-    desc: "토끼도 깊은 교감이 가능한 소중한 반려동물입니다.\n 무지에서 비롯된 방사·유기·학대가 사라지는 세상을 꿈꿉니다",
+    desc: "토끼도 깊은 교감이 가능한 소중한 반려동물입니다. 무지에서 비롯된 방사·유기·학대가 사라지는 세상을 꿈꿉니다",
   },
   {
     imageData: { image: "/rabbit_02.png", width: "190" },

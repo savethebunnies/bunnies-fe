@@ -20,7 +20,7 @@ export default function Banner() {
               alt="세이브 더 버니즈 로고"
             />
           </div>
-          <div className="pt-18 pb-12">
+          <div className="pt-18 pb-12 text-lg">
             <p className="mb-5 font-semibold text-[var(--hover)]">
               세이브 더 버니즈는
               <br />
