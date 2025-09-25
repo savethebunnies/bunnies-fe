@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Page() {
   return (
     <SectionContainer
-      title="입양 홍보"
+      title="가족을 기다려요"
       id="adaption"
       className="bg-[var(--green-100)]"
     >
