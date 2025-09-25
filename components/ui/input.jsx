@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Field from "./field";
 
 //기본 인풋
@@ -30,8 +30,8 @@ export function FileInput({
   ...props
 }) {
   const fileRef = useRef(null);
-  const [previewUrls, setPreviewUrls] = useState([]);
-  const hasSelectedImages = previewUrls.length > 0;
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const hasSelectedImages = selectedFiles.length > 0;
   const openFilePicker = () => fileRef.current?.click();
   const handleFileFocus = (e) => {
     openFilePicker();
@@ -39,10 +39,19 @@ export function FileInput({
   };
 
   const handleFileChange = (e) => {
-    const files = Array.from(e.target.files);
+    const newFiles = Array.from(e.target.files);
+    if (newFiles.length === 0) return;
+    setSelectedFiles((prevFiles) => [...prevFiles, ...newFiles]);
+  };
 
-    const newPreviewUrls = files.map((file) => URL.createObjectURL(file));
-    setPreviewUrls(newPreviewUrls);
+  //이미지 삭제
+  const deleteImage = (indexToDelete) => {
+    setSelectedFiles((prevFiles) =>
+      prevFiles.filter((_, index) => index !== indexToDelete)
+    );
+  };
+  const getPreviewUrl = (file) => {
+    return URL.createObjectURL(file);
   };
   return (
     <>
@@ -50,7 +59,7 @@ export function FileInput({
         readOnly
         placeholder={
           hasSelectedImages
-            ? `총 ${previewUrls.length}개 이미지 선택됨`
+            ? `총 ${selectedFiles.length}개 이미지 선택됨`
             : props.placeholder
         }
         onFocus={handleFileFocus}
@@ -67,12 +76,25 @@ export function FileInput({
         onChange={handleFileChange}
         {...props}
       />
-      <div>
-        <img
-          src={previewUrls[0]}
-          alt="미리보기"
-          className="w-15 aspect-square object-cover bg-gray-100"
-        />
+      <div className="flex gap-1">
+        {selectedFiles.map((file, index) => {
+          return (
+            <div className="relative" key={index}>
+              <img
+                src={getPreviewUrl(file)}
+                alt="미리보기"
+                className="w-15 aspect-square object-cover bg-gray-100"
+              />
+              <button
+                type="button"
+                className="absolute top-0 right-0"
+                onClick={() => deleteImage(index)}
+              >
+                X
+              </button>
+            </div>
+          );
+        })}
       </div>
     </>
   );
