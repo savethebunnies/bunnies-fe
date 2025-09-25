@@ -8,7 +8,7 @@ import Dimmed from "./dimmed";
 
 const NAVMENUS = [
   { name: "세더버 소개", link: "/about" },
-  // { name: "입양 홍보", link: "/adaption" },
+  { name: "입양 홍보", link: "/adaption" },
 ];
 
 export function Nav() {
