@@ -14,10 +14,10 @@ export default function Option({ label, checked, ...props }) {
           className="sr-only"
           {...props}
         />
-        <div className="border w-5 h-5 rounded-full flex items-center justify-center">
+        <div className="border border-[var(--gray-50)] w-5 h-5 rounded-full flex items-center justify-center">
           <span
             className={`inline-block w-3 h-3 rounded-full ${
-              checked ? "bg-black" : "bg-white"
+              checked ? "bg-[var(--primary)]" : "bg-white"
             }`}
           />
         </div>

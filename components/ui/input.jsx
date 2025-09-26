@@ -11,16 +11,18 @@ export function Input({ label, type = "text", helperText, unit, ...props }) {
         type={type}
         id={props.id}
         name={props.id}
-        className="border-b h-12 bg-gray-100 px-4"
+        required={true}
+        className="border border-[var(--gray-50)] rounded h-12  px-4"
         {...props}
       />
       {unit && (
-        <span className="absolute right-3 top-1/2 inline-block">{unit}</span>
+        <span className="absolute right-4 top-1/2 inline-block">{unit}</span>
       )}
     </Field>
   );
 }
 
+const MAX_FILES = 10;
 //파일 인풋
 export function FileInput({
   label,
@@ -31,17 +33,33 @@ export function FileInput({
 }) {
   const fileRef = useRef(null);
   const [selectedFiles, setSelectedFiles] = useState([]);
+  const remaining = MAX_FILES - selectedFiles.length;
   const hasSelectedImages = selectedFiles.length > 0;
-  const openFilePicker = () => fileRef.current?.click();
+
+  const openFilePicker = () => {
+    if (remaining <= 0) {
+      return alert(`최대 ${MAX_FILES}장까지만 업로드할 수 있어요.`);
+    }
+    fileRef.current?.click();
+  };
   const handleFileFocus = (e) => {
     openFilePicker();
     e.target.blur();
   };
 
   const handleFileChange = (e) => {
-    const newFiles = Array.from(e.target.files);
-    if (newFiles.length === 0) return;
-    setSelectedFiles((prevFiles) => [...prevFiles, ...newFiles]);
+    const picked = Array.from(e.target.files);
+    if (picked.length === 0) return;
+
+    const remaining = MAX_FILES - selectedFiles.length;
+
+    //10장 이상 선택 시
+    if (picked.length > remaining) {
+      e.currentTarget.value = "";
+      alert(`최대 ${MAX_FILES}장까지만 업로드할 수 있어요.`);
+      return;
+    }
+    setSelectedFiles((prev) => [...prev, ...picked]);
   };
 
   //이미지 삭제
@@ -77,25 +95,32 @@ export function FileInput({
         onChange={handleFileChange}
         {...props}
       />
-      <div className="flex gap-1">
-        {selectedFiles.map((file, index) => {
-          return (
-            <div className="relative" key={index}>
-              <img
-                src={getPreviewUrl(file)}
-                alt="미리보기"
-                className="w-15 aspect-square object-cover bg-gray-100"
-              />
-              <button
-                type="button"
-                className="absolute top-0 right-0"
-                onClick={() => deleteImage(index)}
-              >
-                X
-              </button>
-            </div>
-          );
-        })}
+      <div className="overflow-x-auto min-h-18 mb-12">
+        <div className="grid grid-flow-col gap-3 auto-cols-[calc((100%_-_2.25rem)/4)] sm:auto-cols-[calc((100%_-_3.75rem)/6)]">
+          {selectedFiles.map((file, index) => {
+            return (
+              <div className="relative" key={index}>
+                <img
+                  src={getPreviewUrl(file)}
+                  alt="미리보기"
+                  className="aspect-square object-cover rounded bg-gray-100"
+                />
+                <button
+                  type="button"
+                  className="absolute top-0 right-0"
+                  onClick={() => deleteImage(index)}
+                >
+                  <img
+                    className="w-7 h-7 "
+                    src="/delete-img.png"
+                    alt="이미지 삭제"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

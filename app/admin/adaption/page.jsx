@@ -40,7 +40,7 @@ export default function Page() {
   return (
     <SectionContainer title="입양 공고 등록" id="adaption" className="bg-white">
       <form action={createPost}>
-        <div className="grid gap-5">
+        <div className="grid gap-4">
           <Input label="상태" id="condition" placeholder="상태" />
           <Input label="이름" id="nm" placeholder="이름을 입력해주세요" />
           <GenderOptions />
@@ -56,6 +56,7 @@ export default function Page() {
             label="특징"
             name="character"
             placeholder="특징을 입력해주세요"
+            required={true}
             rows="4"
           />
           <Input

@@ -5,7 +5,7 @@ export default function TextArea({ label, helperText, ...props }) {
     <Field label={label} helperText={helperText}>
       <textarea
         id={label}
-        className="bg-gray-100 border-b px-4 resize-none"
+        className="border border-[var(--gray-50)] rounded px-4 py-3 box-border resize-none"
         {...props}
       />
     </Field>
