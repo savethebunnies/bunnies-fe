@@ -41,7 +41,7 @@ html:has(#nav-menus[data-open="true"]) {
     @apply text-xl font-extrabold;
   }
   .content-inner {
-    @apply mx-4 max-w-screen-lg md:mx-auto;
+    @apply px-4 max-w-screen-lg mx-auto;
   }
   .text-15 {
     font-size: 0.9375rem;

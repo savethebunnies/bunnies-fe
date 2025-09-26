@@ -12,6 +12,7 @@ export function Input({ label, type = "text", helperText, unit, ...props }) {
         id={props.id}
         name={props.id}
         required={true}
+        autoComplete="off"
         className="border border-[var(--gray-50)] rounded h-12  px-4"
         {...props}
       />
@@ -36,23 +37,23 @@ export function FileInput({
   const remaining = MAX_FILES - selectedFiles.length;
   const hasSelectedImages = selectedFiles.length > 0;
 
+  //파일 선택 오픈
   const openFilePicker = () => {
     if (remaining <= 0) {
       return alert(`최대 ${MAX_FILES}장까지만 업로드할 수 있어요.`);
     }
     fileRef.current?.click();
   };
+
   const handleFileFocus = (e) => {
     openFilePicker();
     e.target.blur();
   };
-
+  //파일 선택
   const handleFileChange = (e) => {
     const picked = Array.from(e.target.files);
     if (picked.length === 0) return;
-
     const remaining = MAX_FILES - selectedFiles.length;
-
     //10장 이상 선택 시
     if (picked.length > remaining) {
       e.currentTarget.value = "";
@@ -95,7 +96,7 @@ export function FileInput({
         onChange={handleFileChange}
         {...props}
       />
-      <div className="overflow-x-auto min-h-18 mb-12">
+      <div className="overflow-x-auto mb-12">
         <div className="grid grid-flow-col gap-3 auto-cols-[calc((100%_-_2.25rem)/4)] sm:auto-cols-[calc((100%_-_3.75rem)/6)]">
           {selectedFiles.map((file, index) => {
             return (
