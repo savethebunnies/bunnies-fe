@@ -22,7 +22,7 @@ export default function Option({ label, checked, ...props }) {
           />
         </div>
 
-        {label}
+        <span>{label}</span>
       </label>
     </div>
   );

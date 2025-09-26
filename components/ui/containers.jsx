@@ -15,13 +15,13 @@ export function ContentCenter({ children }) {
 export function SectionContainer({ children, title, id, className }) {
   return (
     <section
-      className={clsx("text-center py-12", className)}
+      className={clsx("text-center py-12 full-screen", className)}
       aria-labelledby={`stb-${id}-heading`}
     >
       <h2 className="text-heading mb-6" id={`stb-${id}-heading`}>
         {title}
       </h2>
-      <div className="side-margin">{children}</div>
+      <div className="content-inner">{children}</div>
     </section>
   );
 }

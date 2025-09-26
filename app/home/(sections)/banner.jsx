@@ -7,9 +7,9 @@ export default function Banner() {
       <h2 id="stb-banner-heading" className="sr-only">
         세이브 더 버니즈 배너
       </h2>
-      <div className="min-h-[calc(100vh_-_var(--nav-height))] supports-[min-height:100svh]:min-h-[calc(100svh_-_var(--nav-height))] w-full bg-[url('/bg_mo.png')] sm:bg-[url('/bg_pc.png')] bg-cover bg-right-bottom bg-no-repeat flex items-center justify-center">
+      <div className="full-screen w-full bg-[url('/bg_mo.png')] sm:bg-[url('/bg_pc.png')] bg-cover bg-right-bottom bg-no-repeat flex items-center justify-center">
         <div
-          className="text-center rounded-lg max-w-screen-lg side-margin
+          className="text-center rounded-lg content-inner
            backdrop-blur-[2px] bg-white/35 border-2 border-white/70 w-full relative pb-9"
         >
           <div className="h-18 w-18 overflow-hidden bg-white flex items-center justify-center rounded-full absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">

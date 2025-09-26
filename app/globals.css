@@ -39,14 +39,17 @@ html:has(#nav-menus[data-open="true"]) {
   .text-heading {
     @apply text-xl font-extrabold;
   }
-  .side-margin {
-    @apply mx-4 md:mx-auto;
+  .content-inner {
+    @apply mx-4 max-w-screen-lg md:mx-auto;
   }
   .text-15 {
     font-size: 0.9375rem;
   }
   .text-17 {
     font-size: 1.0625rem;
+  }
+  .full-screen {
+    @apply min-h-[calc(100vh_-_var(--nav-height))] supports-[min-height:100svh]:min-h-[calc(100svh_-_var(--nav-height))];
   }
 }
 

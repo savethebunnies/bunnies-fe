@@ -56,6 +56,7 @@ export function FileInput({
   return (
     <>
       <Input
+        label={label}
         readOnly
         placeholder={
           hasSelectedImages
