@@ -1,13 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { SectionContainer } from "@/components/ui/containers";
 import { Input, FileInput } from "@/components/ui/input";
+import GenderOptions from "../(components)/gender-options";
 
-export default async function Page() {
+export default function Page() {
   //   const submit = (formData) => {};
+
   return (
     <SectionContainer title="입양 공고 등록" id="adaption" className="bg-white">
       {/* <form action={submit}> */}
       <Input label="이름" id="name" placeholder="이름을 입력해주세요" />
+      <GenderOptions />
       <Input
         label="몸무게"
         type="number"
