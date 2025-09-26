@@ -7,7 +7,7 @@ export default function Field({ label, helperText, children, ...props }) {
         </label>
       )}
       {children}
-      {helperText && <p className="mt-1 text-xs">{helperText}</p>}
+      {helperText && <p className="mt-2 text-xs">{helperText}</p>}
     </div>
   );
 }

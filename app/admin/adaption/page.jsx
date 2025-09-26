@@ -3,6 +3,7 @@ import { SectionContainer } from "@/components/ui/containers";
 import { Input, FileInput } from "@/components/ui/input";
 import GenderOptions from "../(components)/gender-options";
 import TextArea from "@/components/ui/textarea";
+import Select from "@/components/ui/select";
 
 export default function Page() {
   //   const submit = (formData) => {};
@@ -41,7 +42,12 @@ export default function Page() {
     <SectionContainer title="입양 공고 등록" id="adaption" className="bg-white">
       <form action={createPost}>
         <div className="grid gap-4">
-          <Input label="상태" id="condition" placeholder="상태" />
+          {/* <Input label="상태" id="condition" placeholder="상태" /> */}
+          <Select
+            label="상태"
+            name="condition"
+            options={["입양 공고", "임보 중", "입양 완료"]}
+          />
           <Input label="이름" id="nm" placeholder="이름을 입력해주세요" />
           <GenderOptions />
           <Input

@@ -13,7 +13,7 @@ export function Input({ label, type = "text", helperText, unit, ...props }) {
         name={props.id}
         required={true}
         autoComplete="off"
-        className="border border-[var(--gray-50)] rounded h-12  px-4"
+        className="border border-[var(--gray-50)] rounded h-12 px-4"
         {...props}
       />
       {unit && (
