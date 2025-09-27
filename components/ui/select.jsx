@@ -9,13 +9,13 @@ export default function Select({ label, options, ...props }) {
   const handleOptions = () => setOpen((prev) => !prev);
 
   return (
-    <div className="text-left relative cursor-pointer">
+    <div className="text-left relative">
       <label htmlFor={props.id}>{label}</label>
       <input type="hidden" name={props.name} id={props.id} value={selected} />
       <button
         type="button"
         onClick={handleOptions}
-        className={`w-full border border-[var(--gray-50)] h-12 px-4 flex items-center relative ${
+        className={`w-full border border-[var(--gray-50)] h-12 px-4 flex items-center relative cursor-pointer ${
           isOpen ? "rounded-t" : "rounded"
         }`}
       >
@@ -36,7 +36,7 @@ export default function Select({ label, options, ...props }) {
                 <button
                   type="button"
                   className={clsx(
-                    "px-4 w-full h-full flex items-center rounded hover:bg-[var(--gray-50)]/30",
+                    "px-4 w-full h-full flex items-center rounded hover:bg-[var(--gray-50)]/30 cursor-pointer",
                     isSelected && "bg-[var(--gray-50)]/30"
                   )}
                   onClick={() => {
