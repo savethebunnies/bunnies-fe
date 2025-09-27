@@ -45,8 +45,8 @@ export function Nav() {
           >
             <img
               src={isMenuOpen ? "/close.svg" : "/burger.svg"}
-              aria-hidden="true"
               className={isMenuOpen ? "opacity-90" : ""}
+              aria-hidden="true"
             />
           </Button>
         </div>
@@ -59,7 +59,6 @@ export function Nav() {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
           data-open={isMenuOpen ? "true" : "false"}
-          aria-hidden={!isMenuOpen}
         >
           <ul className="bg-white w-[60vw] h-screen pt-[var(--nav-height)]">
             {NAVMENUS.map((menu, idx) => {

@@ -3,14 +3,14 @@ const nextConfig = {
   serverActions: {
     bodySizeLimit: "10mb",
   },
-  async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: "http://3.39.22.34:3000/api/:path*",
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/api/:path*",
+  //       destination: "http://3.39.22.34:3000/api/:path*",
+  //     },
+  //   ];
+  // },
   webpack(config, { dev }) {
     if (dev) config.cache = false;
 

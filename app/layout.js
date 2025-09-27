@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Nav } from "../components/ui/nav.jsx";
+import { QueryProvider } from "@/components/providers/query-provider";
 // import NextAuthSessionProvider from "@/components/providers/session-provider";
 
 const geistSans = Geist({
@@ -26,8 +27,10 @@ export default function RootLayout({ children }) {
         className={`mx-auto mt-[var(--nav-height)] ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* <NextAuthSessionProvider> */}
-        <Nav />
-        {children}
+        <QueryProvider>
+          <Nav />
+          {children}
+        </QueryProvider>
         {/* </NextAuthSessionProvider> */}
       </body>
     </html>

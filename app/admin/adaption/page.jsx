@@ -37,7 +37,7 @@ export default function Page() {
       console.error("데이터 전송 중 오류 발생:", error);
     }
   }
-
+  //revalidatePath("/adaption") adaption 페이지의 모든 요청 새로고침
   return (
     <SectionContainer title="입양 공고 등록" id="adaption" className="bg-white">
       <form action={createPost}>
