@@ -1,12 +1,8 @@
-"use client";
+import { auth } from "@/libs/utils/auth";
+import GoogleLoginBtn from "./components/google-login-btn";
 
-import { Button } from "@/components/ui/button";
-import { signIn } from "next-auth/react";
-
-export default function Page() {
-  return (
-    <Button onClick={() => signIn()} className="mt-10">
-      카카오톡 로그인
-    </Button>
-  );
+export default async function Page() {
+  const session = await auth();
+  console.log(session);
+  return <GoogleLoginBtn />;
 }
