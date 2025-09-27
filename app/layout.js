@@ -20,7 +20,7 @@ export const metadata = {
     "세더버는 2024년에 뜻을 함께하는 소수의 사람들이 모여 만든 유기토끼 지원 커뮤니티입니다.",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
     <html lang="ko">
       <body
