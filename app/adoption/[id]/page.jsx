@@ -8,6 +8,7 @@ export default function Page() {
         <Button variant="ghost" size="icon">
           <img src="/close.svg" alt="" className="w-3 h-3" />
         </Button>
+        진짜 페이지
       </div>
     </section>
   );

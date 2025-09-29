@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Badge from "./badge";
 
 export default function Card() {
   return (
@@ -17,9 +18,7 @@ export default function Card() {
       <div className="text-left text-sm p-3 bg-white">
         <div className="flex items-center gap-1 mb-2 leading-none">
           <span className="text-base font-bold relative top-[1px]">성훈이</span>
-          <div className="bg-[#BBC9FF] px-2 py-1 rounded-full text-xs">
-            <span className="relative top-[1px]">남아</span>
-          </div>
+          <Badge text="남아" />
         </div>
         <p>
           나이: <span>2000년생 추정</span>

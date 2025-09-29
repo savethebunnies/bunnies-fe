@@ -8,7 +8,7 @@ import Dimmed from "./dimmed";
 
 const NAVMENUS = [
   { name: "세더버 소개", link: "/about" },
-  { name: "입양 홍보", link: "/adaption" },
+  { name: "입양 홍보", link: "/adoption" },
 ];
 
 export function Nav() {
@@ -18,7 +18,7 @@ export function Nav() {
   return (
     <>
       <header
-        className="fixed top-0 w-full z-20"
+        className="fixed top-0 w-full z-10"
         id="header"
         aria-label="사이트 헤더"
       >
@@ -52,32 +52,32 @@ export function Nav() {
         </div>
 
         {/* 네비게이션 패널 */}
-        <nav
-          id="nav-menus"
-          aria-label="네비게이션 메뉴"
-          className={`z-20 shadow-xl transform transition-transform duration-300 ease-in-out fixed inset-y-0 right-0 ${
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-          data-open={isMenuOpen ? "true" : "false"}
-        >
-          <ul className="bg-white w-[60vw] h-screen pt-[var(--nav-height)]">
-            {NAVMENUS.map((menu, idx) => {
-              return (
-                <li className="py-4 px-6" key={`menu-${idx}`}>
-                  <Link
-                    href={menu.link}
-                    className="w-full h-full"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {menu.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-        <Dimmed isOpen={isMenuOpen} setOpen={setMenuOpen} />
       </header>
+      <nav
+        id="nav-menus"
+        aria-label="네비게이션 메뉴"
+        className={`z-30 shadow-xl transform transition-transform duration-300 ease-in-out fixed inset-y-0 right-0 ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+        data-open={isMenuOpen ? "true" : "false"}
+      >
+        <ul className="bg-white w-[60vw] h-screen pt-[var(--nav-height)]">
+          {NAVMENUS.map((menu, idx) => {
+            return (
+              <li className="py-4 px-6" key={`menu-${idx}`}>
+                <Link
+                  href={menu.link}
+                  className="w-full h-full"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {menu.name}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      <Dimmed isOpen={isMenuOpen} setOpen={setMenuOpen} />
     </>
   );
 }
