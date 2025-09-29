@@ -4,45 +4,13 @@ import { Input, FileInput } from "@/components/ui/input";
 import GenderOptions from "../_components/gender-options";
 import TextArea from "@/components/ui/textarea";
 import Select from "@/components/ui/select";
+import { postRabbit } from "@/libs/api/post";
 
 export default function Page() {
-  //   const submit = (formData) => {};
-  async function createPost(formData) {
-    "use server";
-
-    const newFormData = new FormData();
-
-    for (const [key, value] of formData.entries()) {
-      if (key.startsWith("$ACTION_ID_")) {
-        continue;
-      }
-
-      const newKey = `RABBIT_${key.toUpperCase()}`;
-      newFormData.append(newKey, value);
-    }
-    console.log(newFormData, "newformData");
-    try {
-      const res = await fetch("http://3.39.22.34:3000/api/add-rabbit", {
-        method: "POST",
-        body: newFormData,
-      });
-
-      if (!res.ok) {
-        throw new Error(`HTTP 에러! 상태 코드: ${res.status}`);
-      }
-
-      const data = await res.json();
-      console.log("서버 응답:", data);
-    } catch (error) {
-      console.error("데이터 전송 중 오류 발생:", error);
-    }
-  }
-  //revalidatePath("/adaption") adaption 페이지의 모든 요청 서버에서 데이터 새로고침
   return (
     <SectionContainer title="입양 공고 등록" id="adaption" className="bg-white">
-      <form action={createPost}>
+      <form action={postRabbit}>
         <div className="grid gap-4">
-          {/* <Input label="상태" id="condition" placeholder="상태" /> */}
           <Select
             label="상태"
             name="condition"

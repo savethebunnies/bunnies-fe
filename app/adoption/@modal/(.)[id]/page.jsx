@@ -18,7 +18,7 @@ export default async function Page({ params }) {
   const dehydratedState = dehydrate(queryClient);
   return (
     <HydrationBoundary state={dehydratedState}>
-      <AdoptionDetailModal id={id} />;
+      <AdoptionDetailModal id={id} />
     </HydrationBoundary>
   );
 }

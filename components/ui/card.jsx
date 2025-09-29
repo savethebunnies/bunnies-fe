@@ -12,7 +12,7 @@ export default function Card({ rabbit }) {
   return (
     <article className="rounded-lg overflow-hidden border border-[var(--green-200)]">
       <div className="aspect-square overflow-hidden relative">
-        <div className="absolute right-1 top-2 bg-[var(--green-900)]/80 z-10 font-bold text-[#FFEF09] px-3 py-2 text-xs rounded-full flex items-center justify-center">
+        <div className="absolute right-1 top-2 bg-[var(--green-900)]/80 z-[1] font-bold text-[#FFEF09] px-2 py-[6px] text-xs rounded-full flex items-center justify-center">
           <span className="leading-none relative top-[1px]">
             {RABBIT_CONDITION}
           </span>

@@ -85,11 +85,11 @@ body {
   overflow-wrap: break-word;
 }
 
+/* swiper */
 .swiper-button-next,
 .swiper-button-prev {
   color: transparent !important;
 }
-
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: "" !important;
@@ -103,13 +103,11 @@ body {
   height: 100%;
   opacity: 0.5;
 }
-
 .swiper-button-prev::after {
   background-image: url("/pic-arr-left.png");
-  left: 10px;
+  left: 8px;
 }
-
 .swiper-button-next::after {
   background-image: url("/pic-arr-right.png");
-  right: 10px;
+  right: 8px;
 }

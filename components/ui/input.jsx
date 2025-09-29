@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Field from "./field";
 
 //기본 인풋
@@ -36,6 +36,14 @@ export function FileInput({
   const [selectedFiles, setSelectedFiles] = useState([]);
   const remaining = MAX_FILES - selectedFiles.length;
   const hasSelectedImages = selectedFiles.length > 0;
+
+  useEffect(() => {
+    if (fileRef.current) {
+      const dataTransfer = new DataTransfer();
+      selectedFiles.forEach((file) => dataTransfer.items.add(file));
+      fileRef.current.files = dataTransfer.files;
+    }
+  }, [selectedFiles]);
 
   //파일 선택 오픈
   const openFilePicker = () => {

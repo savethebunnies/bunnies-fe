@@ -24,7 +24,7 @@ export function ModalHeader({ title }) {
   const router = useRouter();
   return (
     <div className=" flex justify-between items-center pt-6">
-      <h2 className="font-bold text-[var(--hover)]" id="modal-title">
+      <h2 className="font-bold text-lg text-[var(--hover)]" id="modal-title">
         {title}
       </h2>
       <Button variant="ghost" size="icon" onClick={() => router.back()}>

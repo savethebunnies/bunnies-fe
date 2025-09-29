@@ -17,7 +17,7 @@ export default function AdoptionList() {
   console.log(rabbits);
   if (!rabbits) return;
   return (
-    <div className="py-9">
+    <div className="pb-9">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 box-border">
         {rabbits?.map((rabbit) => {
           const { RABBIT_SEQ } = rabbit;
