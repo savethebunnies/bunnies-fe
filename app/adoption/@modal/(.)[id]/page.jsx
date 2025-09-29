@@ -1,12 +1,19 @@
 "use client";
 
-import { useState } from "react";
-import ImageGallery from "../../(components)/image-gallery";
-import DetailsCard from "../../(components)/details-card";
+import { useEffect, useState } from "react";
+import ImageGallery from "../../_components/image-gallery";
+import DetailsCard from "../../_components/details-card";
 import { ModalFooter, ModalHeader, ModalWrapper } from "@/components/ui/modal";
+import { useRouter } from "next/navigation";
 
 export default function Page({ params }) {
   const [isOpen, setOpen] = useState(true);
+  const router = useRouter();
+  useEffect(() => {
+    if (!isOpen) {
+      router.back();
+    }
+  }, [isOpen, router]);
 
   return (
     <ModalWrapper isOpen={isOpen} setOpen={setOpen}>

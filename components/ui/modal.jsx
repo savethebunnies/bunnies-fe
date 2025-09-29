@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "./button";
 import Dimmed from "./dimmed";
 
-export function ModalWrapper({ isOpen = false, setOpen, children }) {
+export function ModalWrapper({ isOpen, setOpen, children }) {
   return (
     <section
       className="absolute top-0 w-full h-screen flex items-center justify-center"

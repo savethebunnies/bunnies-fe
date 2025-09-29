@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FloatBtn from "../(components)/float-btn";
+import FloatBtn from "../_components/float-btn";
 
 export default function Banner() {
   return (

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SectionContainer } from "@/components/ui/containers";
 import { Input, FileInput } from "@/components/ui/input";
-import GenderOptions from "../(components)/gender-options";
+import GenderOptions from "../_components/gender-options";
 import TextArea from "@/components/ui/textarea";
 import Select from "@/components/ui/select";
 

@@ -5,10 +5,12 @@ import Link from "next/link";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 
 async function getAvailableRabbits() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/rabbits`, {
-    next: { tags: ["rabbits", "adaptable"] },
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}rabbits`, {
+    next: { tags: ["rabbits", "adaptable"], revalidate: false },
   });
+  // 관리자 수정시에만  revalidateTag('rabbits')
   console.log(res, "res");
+
   if (!res.ok) {
     throw new Error(`Fail to fetch data: ${res.status}`);
   }

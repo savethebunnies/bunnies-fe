@@ -1,7 +1,7 @@
 import Card from "@/components/ui/card";
 import { Button } from "../../../components/ui/button";
 import Link from "next/link";
-import Inner from "../(components)/inner";
+import Inner from "../_components/inner";
 
 export default function Adaption() {
   return (

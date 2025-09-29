@@ -1,5 +1,5 @@
-import Inner from "../(components)/inner";
-import ValueCard from "../(components)/value-card";
+import Inner from "../_components/inner";
+import ValueCard from "../_components/value-card";
 
 const values = [
   {
