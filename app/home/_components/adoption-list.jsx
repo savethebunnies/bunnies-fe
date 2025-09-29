@@ -1,11 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-
-import Card from "@/components/ui/card";
 import { getAvailableRabbits } from "@/libs/api/get";
 import { availableRabbitsKey } from "@/constant/query-keys";
+import Link from "next/link";
+import Card from "@/components/ui/card";
 
 export default function AdoptionList() {
   const { data: rabbits } = useQuery({
@@ -17,7 +16,7 @@ export default function AdoptionList() {
   if (!rabbits) return;
   return (
     <div className="py-9">
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 box-border">
+      <div className="grid grid-flow-col auto-cols-[calc((100%_-_0.5rem)/2)] sm:auto-cols-[25%] gap-2  overflow-x-auto snap-x snap-mandatory box-border">
         {rabbits?.map((rabbit) => {
           const { RABBIT_SEQ } = rabbit;
           return (

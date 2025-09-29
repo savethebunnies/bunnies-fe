@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SectionContainer } from "@/components/ui/containers";
-import AdaptionList from "./_sections/adoption-list";
+import AdoptionList from "./_sections/adoption-list";
 
 export default async function Page() {
   return (
@@ -11,7 +11,7 @@ export default async function Page() {
         id="adaption"
         className="bg-[var(--green-100)]"
       >
-        <AdaptionList />
+        <AdoptionList />
         {/* 관리자만 보이는 버튼 */}
         <Button>
           <Link href="/admin/adaption">새로운 공고 등록하기</Link>
