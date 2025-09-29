@@ -10,6 +10,8 @@ export default async function Layout({ children, modal }) {
   await queryClient.prefetchQuery({
     queryKey: ["rabbits", "adoptable"],
     queryFn: getAvailableRabbits,
+    staleTime: Infinity,
+    cacheTime: Infinity,
   });
 
   const dehydratedState = dehydrate(queryClient);

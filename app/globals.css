@@ -84,3 +84,32 @@ body {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: transparent !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  margin-top: 0 !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.swiper-button-prev::after {
+  background-image: url("/pic-arr-left.png");
+  left: 10px;
+}
+
+.swiper-button-next::after {
+  background-image: url("/pic-arr-right.png");
+  right: 10px;
+}

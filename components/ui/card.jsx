@@ -2,7 +2,13 @@ import Image from "next/image";
 import Badge from "./badge";
 
 export default function Card({ rabbit }) {
-  const { RABBIT_NM, RABBIT_GENDER, RABBIT_CONDITION, ALL_IMAGE_URLS } = rabbit;
+  const {
+    RABBIT_NM,
+    RABBIT_GENDER,
+    RABBIT_CONDITION,
+    RABBIT_IMAGES = "/sample.png",
+    RABBIT_WEIGHT,
+  } = rabbit;
   return (
     <article className="rounded-lg overflow-hidden border border-[var(--green-200)]">
       <div className="aspect-square overflow-hidden relative">
@@ -12,7 +18,7 @@ export default function Card({ rabbit }) {
           </span>
         </div>
         <Image
-          src={ALL_IMAGE_URLS[0]}
+          src={RABBIT_IMAGES[0]}
           fill
           alt={RABBIT_NM}
           className="object-cover"
@@ -29,7 +35,7 @@ export default function Card({ rabbit }) {
           나이: <span>2000년생 추정</span>
         </p>
         <p>
-          몸무게: <span>2</span>kg
+          몸무게: <span>{RABBIT_WEIGHT}</span>kg
         </p>
       </div>
     </article>

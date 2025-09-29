@@ -1,26 +1,24 @@
-"use client";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+import AdoptionDetailModal from "../../_sections/adoption-detail-modal";
+import { getRabbitById } from "@/libs/api/get";
+import { RABBIT } from "@/constant/query-keys";
 
-import { useEffect, useState } from "react";
-import ImageGallery from "../../_components/image-gallery";
-import DetailsCard from "../../_components/details-card";
-import { ModalFooter, ModalHeader, ModalWrapper } from "@/components/ui/modal";
-import { useRouter } from "next/navigation";
+export default async function Page({ params }) {
+  const { id } = await params;
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery({
+    queryKey: [RABBIT, id],
+    queryFn: () => getRabbitById({ id }),
+  });
 
-export default function Page({ params }) {
-  const [isOpen, setOpen] = useState(true);
-  const router = useRouter();
-  useEffect(() => {
-    if (!isOpen) {
-      router.back();
-    }
-  }, [isOpen, router]);
-
+  const dehydratedState = dehydrate(queryClient);
   return (
-    <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
-      <ModalHeader title="입양 공고" />
-      <ImageGallery />
-      <DetailsCard />
-      <ModalFooter text="입양하기" />
-    </ModalWrapper>
+    <HydrationBoundary state={dehydratedState}>
+      <AdoptionDetailModal id={id} />;
+    </HydrationBoundary>
   );
 }

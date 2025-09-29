@@ -5,15 +5,16 @@ import { useQuery } from "@tanstack/react-query";
 
 import Card from "@/components/ui/card";
 import { getAvailableRabbits } from "@/libs/api/get";
-import { availableRabbitsKey } from "@/constant/query-keys";
+import { ADOPTABLE, RABBITS } from "@/constant/query-keys";
 
 export default function AdoptionList() {
   const { data: rabbits } = useQuery({
-    queryKey: availableRabbitsKey,
+    queryKey: [RABBITS, ADOPTABLE],
     queryFn: getAvailableRabbits,
     staleTime: Infinity,
     cacheTime: Infinity,
   });
+  console.log(rabbits);
   if (!rabbits) return;
   return (
     <div className="py-9">

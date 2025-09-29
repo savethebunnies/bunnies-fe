@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    // 3. bodySizeLimit 설정
     serverActions: {
       bodySizeLimit: "10mb",
     },
@@ -17,7 +16,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
+        protocol: "https",
         hostname: "savethebunnies-images.s3.ap-northeast-2.amazonaws.com",
+        port: "",
+        pathname: "/**",
       },
     ],
   },

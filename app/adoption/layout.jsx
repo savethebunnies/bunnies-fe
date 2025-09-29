@@ -1,4 +1,4 @@
-import { availableRabbitsKey } from "@/constant/query-keys";
+import { ADOPTABLE, RABBITS } from "@/constant/query-keys";
 import { getAvailableRabbits } from "@/libs/api/get";
 import {
   dehydrate,
@@ -9,7 +9,7 @@ import {
 export default async function Layout({ children, modal }) {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: availableRabbitsKey,
+    queryKey: [RABBITS, ADOPTABLE],
     queryFn: getAvailableRabbits,
   });
 

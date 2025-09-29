@@ -1,5 +1,5 @@
 import Image from "next/image";
-import GoogleLoginBtn from "./(components)/google-login-btn";
+import GoogleLoginBtn from "./_components/google-login-btn";
 import { ContentCenter } from "@/components/ui/containers";
 
 export default async function Page() {
