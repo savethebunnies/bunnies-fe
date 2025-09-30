@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 export default function ImageSlider({ images }) {
   return (
-    <div className="relative aspect-square w-full my-4">
+    <div className="relative aspect-square w-full my-4 mx-auto bg-white rounded overflow-hidden">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={0}
@@ -26,7 +26,7 @@ export default function ImageSlider({ images }) {
           "--swiper-navigation-size": "40px",
         }}
       >
-        {images.map((image, index) => (
+        {images?.map((image, index) => (
           <SwiperSlide key={index}>
             <div className="relative h-full w-full">
               <Image src={image} fill className="object-cover" alt={index} />

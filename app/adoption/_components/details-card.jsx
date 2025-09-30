@@ -1,6 +1,7 @@
 import Badge from "@/components/ui/badge";
+import clsx from "clsx";
 
-export default function DetailsCard({ content }) {
+export default function DetailsCard({ content, isModal = false }) {
   const {
     RABBIT_CHARACTER,
     RABBIT_DESC,
@@ -9,8 +10,14 @@ export default function DetailsCard({ content }) {
     RABBIT_RESCUE_LOCATION,
     RABBIT_WEIGHT,
   } = content;
+  if (!content) return;
   return (
-    <div className="flex flex-col gap-[2px] pb-7 overflow-auto max-h-60 text-15 text-[var(--black-50)]">
+    <div
+      className={clsx(
+        "flex flex-col gap-[2px] pb-7 text-15 text-[var(--black-50)] text-left",
+        isModal && "overflow-auto max-h-60 "
+      )}
+    >
       <div className="flex items-center gap-1 mb-3">
         <h3 className="text-lg font-bold relative top-[1px]">{RABBIT_NM}</h3>
         <Badge text={RABBIT_GENDER} />

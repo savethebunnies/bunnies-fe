@@ -1,15 +1,24 @@
-import { Button } from "@/components/ui/button";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+import { RABBIT } from "@/constant/query-keys";
+import AdoptionDetail from "../_sections/adoption-detail";
+import { getRabbitById } from "@/libs/api/get";
 
-export default function Page() {
+export default async function Page({ params }) {
+  const { id } = await params;
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery({
+    queryKey: [RABBIT, id],
+    queryFn: () => getRabbitById({ id }),
+  });
+
+  const dehydratedState = dehydrate(queryClient);
   return (
-    <section>
-      <div>
-        <div>입양 공고</div>
-        <Button variant="ghost" size="icon">
-          <img src="/close.svg" alt="" className="w-3 h-3" />
-        </Button>
-        진짜 페이지
-      </div>
-    </section>
+    <HydrationBoundary state={dehydratedState}>
+      <AdoptionDetail id={id} />
+    </HydrationBoundary>
   );
 }

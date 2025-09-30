@@ -5,12 +5,14 @@ import { Button } from "./button";
 import Dimmed from "./dimmed";
 
 export function ModalWrapper({ isOpen, setOpen, children }) {
+  if (!isOpen) return null;
   return (
     <section
-      className="absolute top-0 w-full h-screen flex items-center justify-center"
+      className="fixed inset-0 z-20 flex items-center justify-center"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
+      data-modal="true"
     >
       <article className="rounded-xl overflow-hidden z-30 bg-white w-[calc(100%-32px)]  max-w-lg">
         <div className="px-5">{children}</div>
@@ -27,13 +29,17 @@ export function ModalHeader({ title }) {
       <h2 className="font-bold text-lg text-[var(--hover)]" id="modal-title">
         {title}
       </h2>
-      <Button variant="ghost" size="icon" onClick={() => router.back()}>
+      <Button
+        variant="ghost"
+        size="icon"
+        aria-label="모달 닫기"
+        onClick={() => router.back()}
+      >
         <img
           src="/close.svg"
           alt="아이콘"
           className="relative w-6 h-6 left-2"
           aria-hidden="true"
-          aria-label="모달 닫기"
         />
       </Button>
     </div>

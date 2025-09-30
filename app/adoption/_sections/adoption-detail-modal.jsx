@@ -24,12 +24,12 @@ export default function AdoptionDetailModal({ id }) {
       router.back();
     }
   }, [isOpen, router]);
-  console.log(rabbit, "테스트");
+
   return (
     <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
       <ModalHeader title={rabbit?.RABBIT_CONDITION} />
       <ImageSlider images={rabbit?.RABBIT_IMAGES} />
-      <DetailsCard content={rabbit} />
+      <DetailsCard content={rabbit} isModal />
       <ModalFooter text="입양하기" />
     </ModalWrapper>
   );

@@ -26,7 +26,8 @@
 }
 
 /* 메뉴바 오픈 시 스크롤 잠금 설정 */
-html:has(#nav-menus[data-open="true"]) {
+html:has(#nav-menus[data-open="true"]),
+html:has([data-modal="true"]) {
   overflow: hidden;
   height: 100dvh;
 }

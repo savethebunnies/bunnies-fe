@@ -22,7 +22,11 @@ export default function AdoptionList() {
         {rabbits?.map((rabbit) => {
           const { RABBIT_SEQ } = rabbit;
           return (
-            <Link key={RABBIT_SEQ} href={`/adoption/${RABBIT_SEQ}`}>
+            <Link
+              key={RABBIT_SEQ}
+              scroll={false}
+              href={`/adoption/${RABBIT_SEQ}`}
+            >
               <Card rabbit={rabbit} />
             </Link>
           );
