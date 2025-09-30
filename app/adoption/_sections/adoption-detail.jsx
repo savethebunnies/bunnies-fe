@@ -17,11 +17,11 @@ export default function AdoptionDetail({ id }) {
   console.log(rabbit);
   return (
     <SectionContainer
-      title={rabbit?.RABBIT_CONDITION}
+      title={`가족을 기다리고 있어요! 🍀${rabbit?.RABBIT_NM}🍀`}
       id={`rabbit-${rabbit?.RABBIT_SEQ}`}
       className="bg-[var(--green-50)]"
     >
-      <div className="max-w-lg mx-auto">
+      <div className="max-w-lg mx-auto relative ">
         <ImageSlider images={rabbit?.RABBIT_IMAGES} />
         <DetailsCard content={rabbit} />
       </div>

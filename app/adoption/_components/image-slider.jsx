@@ -7,10 +7,14 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import clsx from "clsx";
+import { useState } from "react";
 
 export default function ImageSlider({ images }) {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
   return (
-    <div className="relative aspect-square w-full my-4 mx-auto bg-white rounded overflow-hidden">
+    <div className="relative aspect-square w-full my-4 mx-auto bg-white rounded-md overflow-hidden">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={0}
@@ -25,10 +29,18 @@ export default function ImageSlider({ images }) {
           "--swiper-pagination-bullet-inactive-opacity": "0.1",
           "--swiper-navigation-size": "40px",
         }}
+        onSlideChange={(swiper) => {
+          setCurrentSlideIndex(swiper.realIndex);
+        }}
       >
         {images?.map((image, index) => (
           <SwiperSlide key={index}>
-            <div className="relative h-full w-full">
+            <div
+              className={clsx(
+                "relative h-full w-full overflow-visible",
+                currentSlideIndex == 0 && "frame"
+              )}
+            >
               <Image src={image} fill className="object-cover" alt={index} />
             </div>
           </SwiperSlide>

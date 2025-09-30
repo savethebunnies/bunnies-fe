@@ -20,10 +20,16 @@ export function ContentCenter({ children, className }) {
 export function SectionContainer({ children, title, id, className }) {
   return (
     <section
-      className={clsx("text-center py-12 full-screen", className)}
+      className={clsx(
+        "text-center py-12 full-screen whitespace-pre-line ",
+        className
+      )}
       aria-labelledby={`stb-${id}-heading`}
     >
-      <h2 className="text-heading mb-6" id={`stb-${id}-heading`}>
+      <h2
+        className="text-heading mb-6 text-[var(--primary)]"
+        id={`stb-${id}-heading`}
+      >
         {title}
       </h2>
       <div className="content-inner">{children}</div>

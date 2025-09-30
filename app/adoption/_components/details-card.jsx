@@ -15,10 +15,10 @@ export default function DetailsCard({ content, isModal = false }) {
     <div
       className={clsx(
         "flex flex-col gap-[2px] pb-7 text-15 text-[var(--black-50)] text-left",
-        isModal && "overflow-auto max-h-60 "
+        isModal && "overflow-auto max-h-[20vh]"
       )}
     >
-      <div className="flex items-center gap-1 mb-3">
+      <div className="flex items-center gap-2 mb-3">
         <h3 className="text-lg font-bold relative top-[1px]">{RABBIT_NM}</h3>
         <Badge text={RABBIT_GENDER} />
       </div>

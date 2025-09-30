@@ -21,7 +21,7 @@ export default function Card({ rabbit }) {
           src={RABBIT_IMAGES[0]}
           fill
           alt={RABBIT_NM}
-          className="object-cover"
+          className="object-cover bg-[var(--green-50)]"
         />
       </div>
       <div className="text-left text-sm p-3 bg-white">
