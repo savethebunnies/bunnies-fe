@@ -52,32 +52,32 @@ export function Nav() {
         </div>
 
         {/* 네비게이션 패널 */}
+        <nav
+          id="nav-menus"
+          aria-label="네비게이션 메뉴"
+          className={`z-40 shadow-xl transform transition-transform duration-300 ease-in-out fixed inset-y-0 right-0 ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+          data-open={isMenuOpen ? "true" : "false"}
+        >
+          <ul className="bg-white w-[60vw] sm:w-[35vw] h-screen pt-[var(--nav-height)]">
+            {NAVMENUS.map((menu, idx) => {
+              return (
+                <li className="py-4 px-6" key={`menu-${idx}`}>
+                  <Link
+                    href={menu.link}
+                    className="w-full h-full"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {menu.name}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+        <Dimmed isOpen={isMenuOpen} setOpen={setMenuOpen} />
       </header>
-      <nav
-        id="nav-menus"
-        aria-label="네비게이션 메뉴"
-        className={`z-30 shadow-xl transform transition-transform duration-300 ease-in-out fixed inset-y-0 right-0 ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
-        data-open={isMenuOpen ? "true" : "false"}
-      >
-        <ul className="bg-white w-[60vw] sm:w-[35vw] h-screen pt-[var(--nav-height)]">
-          {NAVMENUS.map((menu, idx) => {
-            return (
-              <li className="py-4 px-6" key={`menu-${idx}`}>
-                <Link
-                  href={menu.link}
-                  className="w-full h-full"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {menu.name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <Dimmed isOpen={isMenuOpen} setOpen={setMenuOpen} />
     </>
   );
 }

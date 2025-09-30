@@ -8,6 +8,7 @@ import TextArea from "@/components/ui/textarea";
 import Select from "@/components/ui/select";
 import { postRabbit } from "@/libs/api/post";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Page() {
   const [formKey, setFormKey] = useState(0);
@@ -15,7 +16,7 @@ export default function Page() {
   const handleSubmit = async (formData) => {
     await postRabbit(formData);
     setFormKey((prevKey) => prevKey + 1);
-    alert("토끼 정보가 성공적으로 등록되었습니다!");
+    toast.success("토끼 정보가 성공적으로 등록되었습니다!");
   };
 
   return (

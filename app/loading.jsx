@@ -6,7 +6,7 @@ import { ContentCenter } from "@/components/ui/containers";
 
 export default function LottieAnimation() {
   return (
-    <ContentCenter>
+    <ContentCenter className="top-1/4">
       <div style={{ width: 300, height: 300 }}>
         <Lottie
           animationData={lottieJson}

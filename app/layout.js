@@ -4,6 +4,8 @@ import { Nav } from "../components/ui/nav.jsx";
 import { QueryProvider } from "@/components/providers/query-provider";
 import NextAuthSessionProvider from "@/components/providers/session-provider";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +35,18 @@ export default async function RootLayout({ children }) {
             {children}
           </QueryProvider>
         </NextAuthSessionProvider>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
