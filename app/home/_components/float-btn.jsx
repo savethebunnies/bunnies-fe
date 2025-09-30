@@ -26,7 +26,7 @@ export default function FloatBtn() {
       className="inline-block transform-gpu will-change-transform"
     >
       <Button>
-        <Link href="/adaption" className="flex gap-2">
+        <Link href="/adoption" className="flex gap-2">
           유기토끼 만나러 가기
           <img src="/arrow-right.svg" aria-hidden="true" />
         </Link>

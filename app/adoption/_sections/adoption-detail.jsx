@@ -6,6 +6,7 @@ import { RABBIT } from "@/constant/query-keys";
 import { SectionContainer } from "@/components/ui/containers";
 import ImageSlider from "../_components/image-slider";
 import DetailsCard from "../_components/details-card";
+import AdoptionBtn from "../_components/adoption-btn";
 
 export default function AdoptionDetail({ id }) {
   const { data: rabbit } = useQuery({
@@ -21,10 +22,11 @@ export default function AdoptionDetail({ id }) {
       id={`rabbit-${rabbit?.RABBIT_SEQ}`}
       className="bg-[var(--green-50)]"
     >
-      <div className="max-w-lg mx-auto relative ">
+      <div className="max-w-lg mx-auto relative pb-20">
         <ImageSlider images={rabbit?.RABBIT_IMAGES} />
         <DetailsCard content={rabbit} />
       </div>
+      <AdoptionBtn text="입양 신청" />
     </SectionContainer>
   );
 }
