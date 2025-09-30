@@ -3,6 +3,7 @@ import "./globals.css";
 import { Nav } from "../components/ui/nav.jsx";
 import { QueryProvider } from "@/components/providers/query-provider";
 import NextAuthSessionProvider from "@/components/providers/session-provider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }) {
           </QueryProvider>
         </NextAuthSessionProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
     </html>
   );
 }

@@ -61,7 +61,7 @@ export function Nav() {
         }`}
         data-open={isMenuOpen ? "true" : "false"}
       >
-        <ul className="bg-white w-[50vw] sm:w-[35vw] h-screen pt-[var(--nav-height)]">
+        <ul className="bg-white w-[60vw] sm:w-[35vw] h-screen pt-[var(--nav-height)]">
           {NAVMENUS.map((menu, idx) => {
             return (
               <li className="py-4 px-6" key={`menu-${idx}`}>
