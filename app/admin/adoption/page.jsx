@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { SectionContainer } from "@/components/ui/containers";
 import { Input, FileInput } from "@/components/ui/input";
@@ -5,11 +7,20 @@ import GenderOptions from "../_components/gender-options";
 import TextArea from "@/components/ui/textarea";
 import Select from "@/components/ui/select";
 import { postRabbit } from "@/libs/api/post";
+import { useState } from "react";
 
 export default function Page() {
+  const [formKey, setFormKey] = useState(0);
+
+  const handleSubmit = async (formData) => {
+    await postRabbit(formData);
+    setFormKey((prevKey) => prevKey + 1);
+    alert("토끼 정보가 성공적으로 등록되었습니다!");
+  };
+
   return (
     <SectionContainer title="입양 공고 등록" id="adaption" className="bg-white">
-      <form action={postRabbit}>
+      <form key={formKey} action={handleSubmit}>
         <div className="grid gap-4">
           <Select
             label="상태"

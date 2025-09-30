@@ -18,6 +18,7 @@ export async function postRabbit(formData) {
     });
     revalidateTag("rabbits");
     revalidateTag("rabbit");
+
     if (!res.ok) {
       throw new Error(`HTTP 에러! 상태 코드: ${res.status}`);
     }
