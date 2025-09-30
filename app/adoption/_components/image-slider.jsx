@@ -21,7 +21,7 @@ export default function ImageSlider({ images }) {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        loop={false}
+        loop={true}
         className="h-full w-full"
         style={{
           "--swiper-theme-color": "#2e7b10",

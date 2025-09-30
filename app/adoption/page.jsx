@@ -13,6 +13,7 @@ export default async function Page() {
       >
         <AdoptionList />
         {/* 관리자만 보이는 버튼 */}
+
         <Button>
           <Link href="/admin/adoption">새로운 공고 등록하기</Link>
         </Button>

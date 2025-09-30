@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-
 import Card from "@/components/ui/card";
 import { getAvailableRabbits } from "@/libs/api/get";
 import { ADOPTABLE, RABBITS } from "@/constant/query-keys";
@@ -14,7 +13,6 @@ export default function AdoptionList() {
     staleTime: Infinity,
     cacheTime: Infinity,
   });
-  console.log(rabbits);
   if (!rabbits) return;
   return (
     <div className="pb-9">
