@@ -29,7 +29,7 @@ export const metadata = {
     siteName: "세이브 더 버니즈",
     images: [
       {
-        url: "https://savethebunnies-images.s3.ap-northeast-2.amazonaws.com/images/save_the_bunnies.png",
+        url: "https://savethebunnies-images.s3.ap-northeast-2.amazonaws.com/images/bunnies_img.png",
         width: 1200,
         height: 630,
       },
