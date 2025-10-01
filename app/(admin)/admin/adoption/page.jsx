@@ -9,6 +9,9 @@ import Select from "@/components/ui/select";
 import { postRabbit } from "@/libs/api/post";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import NeuteredOptions from "../_components/neutered-options";
+
+import Calender from "@/components/ui/calendar";
 
 export default function Page() {
   const [formKey, setFormKey] = useState(0);
@@ -29,7 +32,13 @@ export default function Page() {
             options={["입양 공고", "임보 중", "입양 완료"]}
           />
           <Input label="이름" id="nm" placeholder="이름을 입력해주세요" />
+          <Input
+            label="나이"
+            id="age"
+            placeholder="예) 2살 추정, 생후 3개월, 나이 모름 등"
+          />
           <GenderOptions />
+          <NeuteredOptions />
           <Input
             label="몸무게"
             type="number"
@@ -51,6 +60,7 @@ export default function Page() {
             placeholder="구조 장소를 입력해주세요"
             helperText="시 / 구 / 동"
           />
+          <Calender />
           <TextArea
             label="기타"
             name="desc"

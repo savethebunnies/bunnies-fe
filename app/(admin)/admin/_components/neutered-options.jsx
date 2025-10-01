@@ -1,18 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Option from "@/components/ui/option";
-
+import { useState } from "react";
 const options = [
-  { label: "남아", id: "m" },
-  { label: "여아", id: "f" },
-  { label: "불확실", id: "u" },
+  { label: "완료", id: "y" },
+  { label: "미완료", id: "n" },
 ];
-export default function GenderOptions() {
-  const [selectedValue, setSelectedValue] = useState("불확실");
+export default function NeuteredOptions() {
+  const [selectedValue, setSelectedValue] = useState("미완료");
+
   return (
     <fieldset>
-      <legend className="text-sm text-left mb-1">성별</legend>
+      <legend className="text-sm text-left mb-1">중성화 여부</legend>
       <div className="flex gap-10">
         {options.map((option) => {
           const { label, id } = option;
@@ -20,8 +19,8 @@ export default function GenderOptions() {
             <Option
               key={id}
               label={label}
-              id={`gender-${id}`}
-              name="gender"
+              id={`neutered-${id}`}
+              name="neutered"
               value={label}
               checked={selectedValue === `${label}`}
               onChange={() => setSelectedValue(label)}
