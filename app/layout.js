@@ -18,25 +18,36 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://savethebunnies.kr"),
+
   title: "세이브 더 버니즈",
-  description:
-    "세더버는 2024년에 뜻을 함께하는 소수의 사람들이 모여 만든 유기토끼 지원 커뮤니티입니다.",
+  description: "유기토끼 지원 커뮤니티 세더버",
+
   openGraph: {
-    title: "세이브 더 버니즈",
-    description:
-      "세더버는 2024년에 뜻을 함께하는 소수의 사람들이 모여 만든 유기토끼 지원 커뮤니티입니다.",
+    type: "website",
     url: "https://savethebunnies.kr",
     siteName: "세이브 더 버니즈",
+    title: "세이브 더 버니즈",
+    description: "유기토끼 지원 커뮤니티 세더버",
     images: [
       {
         url: "https://savethebunnies-images.s3.ap-northeast-2.amazonaws.com/images/bunnies_img.png",
         width: 1200,
         height: 630,
+        alt: "세더버 유기토끼 커뮤니티",
       },
     ],
     locale: "ko_KR",
-    type: "website",
   },
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
+  keywords: ["세더버", "세이브 더 버니즈", "유기토끼", "입양", "임보"],
 };
 
 export default async function RootLayout({ children }) {
