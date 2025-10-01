@@ -6,11 +6,16 @@ import "react-day-picker/dist/style.css";
 import { Input } from "./input";
 import { formatDate } from "@/utils/date-utils";
 
-export default function Calender({ date }) {
-  if (!date) {
-    date = new Date();
+export default function Calender({
+  label,
+  name,
+  selectedDate,
+  setSelectedDate,
+}) {
+  if (!selectedDate) {
+    selectedDate = new Date();
   }
-  const [selectedDate, setSelectedDate] = useState(date);
+
   const [isCalendarOpen, setCalendarOpen] = useState(false);
 
   const handleDaySelect = (date) => {
@@ -21,9 +26,11 @@ export default function Calender({ date }) {
   return (
     <div className="relative">
       <Input
-        label="구조 날짜"
+        label={label}
         type="text"
         readOnly
+        id={name}
+        name={name}
         value={formatDate(selectedDate)}
         onClick={() => setCalendarOpen((prev) => !prev)}
       />

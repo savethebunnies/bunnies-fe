@@ -8,6 +8,9 @@ export default function Card({ rabbit }) {
     RABBIT_CONDITION,
     RABBIT_IMAGES = "/sample.png",
     RABBIT_WEIGHT,
+    RABBIT_AGE,
+    RABBIT_RESCUE_DATE,
+    RABBIT_NEUTERED,
   } = rabbit;
   return (
     <article className="rounded-lg overflow-hidden border border-[var(--green-200)]">
@@ -32,7 +35,7 @@ export default function Card({ rabbit }) {
           <Badge text={RABBIT_GENDER} />
         </div>
         <p>
-          나이: <span>2000년생 추정</span>
+          나이: <span>{RABBIT_AGE}</span>
         </p>
         <p>
           몸무게: <span>{RABBIT_WEIGHT}</span>kg

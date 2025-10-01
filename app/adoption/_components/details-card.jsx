@@ -9,6 +9,9 @@ export default function DetailsCard({ content, isModal = false }) {
     RABBIT_NM,
     RABBIT_RESCUE_LOCATION,
     RABBIT_WEIGHT,
+    RABBIT_RESCUE_DATE,
+    RABBIT_AGE,
+    RABBIT_NEUTERED,
   } = content;
   if (!content) return;
   return (
@@ -24,13 +27,19 @@ export default function DetailsCard({ content, isModal = false }) {
       </div>
       <p className="flex gap-1">
         나이:
-        <span className="font-bold">2000년생</span>
+        <span className="font-bold">{RABBIT_AGE}</span>
       </p>
       <p className="flex gap-1">
         몸무게:<span className="font-bold">{RABBIT_WEIGHT}</span>kg
       </p>
       <p className="flex gap-1">
         구조장소:<span className="font-bold">{RABBIT_RESCUE_LOCATION}</span>
+      </p>
+      <p className="flex gap-1">
+        구조날짜:<span className="font-bold">{RABBIT_RESCUE_DATE}</span>
+      </p>
+      <p className="flex gap-1">
+        중성화:<span className="font-bold">{RABBIT_NEUTERED}</span>
       </p>
       <p className="flex gap-1">
         특징:

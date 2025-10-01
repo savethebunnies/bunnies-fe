@@ -10,15 +10,17 @@ import { postRabbit } from "@/libs/api/post";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import NeuteredOptions from "../_components/neutered-options";
-
 import Calender from "@/components/ui/calendar";
 
 export default function Page() {
   const [formKey, setFormKey] = useState(0);
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const handleSubmit = async (formData) => {
     await postRabbit(formData);
     setFormKey((prevKey) => prevKey + 1);
+
+    setSelectedDate(null);
     toast.success("토끼 정보가 성공적으로 등록되었습니다!");
   };
 
@@ -60,7 +62,12 @@ export default function Page() {
             placeholder="구조 장소를 입력해주세요"
             helperText="시 / 구 / 동"
           />
-          <Calender />
+          <Calender
+            label="구조 날짜"
+            name="rescue_date"
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+          />
           <TextArea
             label="기타"
             name="desc"
