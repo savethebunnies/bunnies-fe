@@ -21,6 +21,22 @@ export const metadata = {
   title: "세이브 더 버니즈",
   description:
     "세더버는 2024년에 뜻을 함께하는 소수의 사람들이 모여 만든 유기토끼 지원 커뮤니티입니다.",
+  openGraph: {
+    title: "세이브 더 버니즈",
+    description:
+      "세더버는 2024년에 뜻을 함께하는 소수의 사람들이 모여 만든 유기토끼 지원 커뮤니티입니다.",
+    url: "https://savethebunnies.kr",
+    siteName: "세이브 더 버니즈",
+    images: [
+      {
+        url: "https://savethebunnies-images.s3.ap-northeast-2.amazonaws.com/images/save_the_bunnies.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
 };
 
 export default async function RootLayout({ children }) {
