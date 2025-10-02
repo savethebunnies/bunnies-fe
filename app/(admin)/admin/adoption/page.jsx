@@ -58,25 +58,25 @@ export default function Page() {
           />
           <Input
             label="구조 장소"
-            id="rescue_location"
+            id="location"
             placeholder="구조 장소를 입력해주세요"
             helperText="시 / 구 / 동"
           />
           <Calender
             label="구조 날짜"
-            name="rescue_date"
+            name="date"
             selectedDate={selectedDate}
             setSelectedDate={setSelectedDate}
           />
           <TextArea
             label="기타"
-            name="desc"
+            name="ect"
             placeholder="기타 정보를 입력해주세요"
             rows="4"
           />
           <FileInput
             label="이미지"
-            id="image"
+            id="images"
             multiple
             placeholder="이미지를 등록해주세요"
             helperText="첫 번째로 업로드한 이미지가 대표 이미지로 설정됩니다."

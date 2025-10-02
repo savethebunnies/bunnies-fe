@@ -3,18 +3,10 @@
 import { revalidateTag } from "next/cache";
 
 export async function postRabbit(formData) {
-  const newFormData = new FormData();
-  for (const [key, value] of formData.entries()) {
-    if (key.startsWith("$ACTION_ID_")) {
-      continue;
-    }
-    const newKey = `RABBIT_${key.toUpperCase()}`;
-    newFormData.append(newKey, value);
-  }
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}add-rabbit`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/rabbit`, {
       method: "POST",
-      body: newFormData,
+      body: formData,
     });
     revalidateTag("rabbits");
     revalidateTag("rabbit");
