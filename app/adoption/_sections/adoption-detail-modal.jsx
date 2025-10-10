@@ -28,7 +28,7 @@ export default function AdoptionDetailModal({ id }) {
   }, [isOpen, router]);
 
   const handleformUrlLink = () => window.open(formUrl, "_blank");
-  console.log(rabbit, "rabbit");
+
   return (
     <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
       <ModalHeader title={rabbit?.RABBIT_CONDITION} />

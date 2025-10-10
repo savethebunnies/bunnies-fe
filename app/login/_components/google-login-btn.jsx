@@ -5,7 +5,10 @@ import styles from "./google-login-btn.module.css";
 
 export default function GoogleLoginBtn() {
   return (
-    <button onClick={() => signIn()} className={styles.gsiMaterialButton}>
+    <button
+      onClick={() => signIn("google", { callbackUrl: "/" })}
+      className={styles.gsiMaterialButton}
+    >
       <div className={styles.gsiMaterialButtonState}></div>
       <div className={styles.gsiMaterialButtonContentWrapper}>
         <div className={styles.gsiMaterialButtonIcon}>

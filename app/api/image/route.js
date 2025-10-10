@@ -19,12 +19,12 @@ export async function POST(request) {
       region: "ap-northeast-2",
       signatureVersion: "v4",
     });
-
+    const ts = Date.now();
     const s3 = new aws.S3();
     const url = s3.createPresignedPost({
       Bucket: process.env.BUCKET_NAME,
       Fields: {
-        key: `temp/${fileName}`,
+        key: `temp/${ts}-${fileName}`,
         "Content-Disposition": "inline",
         "Content-Type": `${fileType}`,
       },

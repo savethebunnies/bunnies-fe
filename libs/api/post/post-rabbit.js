@@ -1,3 +1,6 @@
+"use server";
+import { revalidateTag, revalidatePath } from "next/cache";
+
 export async function postRabbit(data) {
   try {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/rabbits`, {
@@ -5,7 +8,8 @@ export async function postRabbit(data) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-
+    revalidateTag("rabbits");
+    revalidatePath("/rabbits");
     if (!res.ok) {
       throw new Error(`HTTP 에러! 상태 코드: ${res.status}`);
     }

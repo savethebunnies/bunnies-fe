@@ -15,7 +15,6 @@ export default function FileInput({
 }) {
   const fileRef = useRef(null);
   const [selectedFiles, setSelectedFiles] = useState([]);
-  console.log(selectedFiles, "선택된 파일");
   const remaining = MAX_FILES - selectedFiles.length;
   const hasSelectedImages = selectedFiles.length > 0;
   const [s3Urls, setS3Urls] = useState([]);

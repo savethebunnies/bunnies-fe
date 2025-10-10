@@ -9,7 +9,5 @@ export async function getAvailableRabbits() {
   if (!res.ok) {
     throw new Error(`Fail to fetch data: ${res.status}`);
   }
-  const data = await res.json();
-  console.log("data:", data);
-  return data;
+  return await res.json();
 }

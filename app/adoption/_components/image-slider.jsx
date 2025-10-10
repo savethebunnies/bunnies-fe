@@ -14,7 +14,7 @@ export default function ImageSlider({ images }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   return (
-    <div className="relative aspect-square w-full my-4 mx-auto bg-white rounded-md overflow-hidden">
+    <div className="relative aspect-[4/5] w-full my-4 mx-auto bg-white rounded-md overflow-hidden">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={0}
@@ -37,8 +37,8 @@ export default function ImageSlider({ images }) {
           <SwiperSlide key={index}>
             <div
               className={clsx(
-                "relative h-full w-full overflow-visible",
-                currentSlideIndex == 0 && "frame"
+                "relative h-full w-full overflow-visible"
+                // currentSlideIndex == 0 && "frame"
               )}
             >
               <Image src={image} fill className="object-cover" alt={index} />

@@ -16,7 +16,7 @@ export default function AdoptionDetail({ id }) {
     cacheTime: Infinity,
     enabled: !!id,
   });
-  console.log(rabbit, "rabbit");
+
   return (
     <SectionContainer
       title={`가족을 기다리고 있어요! 🍀${rabbit?.name}🍀`}

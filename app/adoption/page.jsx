@@ -2,8 +2,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { SectionContainer } from "@/components/ui/containers";
 import AdoptionList from "./_sections/adoption-list";
+import { auth } from "@/libs/utils/auth";
 
 export default async function Page() {
+  const session = await auth();
+  const isAdmin = session.user.role === "ADMIN";
   return (
     <>
       <SectionContainer
@@ -13,10 +16,11 @@ export default async function Page() {
       >
         <AdoptionList />
         {/* 관리자만 보이는 버튼 */}
-
-        {/* <Button>
-          <Link href="/admin/adoption">새로운 공고 등록하기</Link>
-        </Button> */}
+        {isAdmin && (
+          <Button>
+            <Link href="/admin/adoption">새로운 공고 등록하기</Link>
+          </Button>
+        )}
       </SectionContainer>
     </>
   );

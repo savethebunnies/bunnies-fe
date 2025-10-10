@@ -7,7 +7,6 @@ if (process.env.NODE_ENV === "development") global.prisma = prisma;
 export async function POST(request) {
   try {
     const body = await request.json();
-    console.log(body, "전송하는 데이터");
 
     // 예시: body에서 title과 content를 추출
     const {
