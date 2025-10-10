@@ -1,7 +1,7 @@
 import { ADOPTABLE, RABBITS } from "@/constant/query-keys";
 
 export async function getAvailableRabbits() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}rabbits`, {
+  const res = await fetch(`/api/rabbits`, {
     next: { tags: [RABBITS, ADOPTABLE], revalidate: false },
   });
   // 관리자 수정,삭제,등록  revalidateTag('rabbits')

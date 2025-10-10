@@ -15,6 +15,7 @@ export default function FileInput({
 }) {
   const fileRef = useRef(null);
   const [selectedFiles, setSelectedFiles] = useState([]);
+  console.log(selectedFiles, "선택된 파일");
   const remaining = MAX_FILES - selectedFiles.length;
   const hasSelectedImages = selectedFiles.length > 0;
   const [s3Urls, setS3Urls] = useState([]);
@@ -108,17 +109,14 @@ export default function FileInput({
 
   //이미지 삭제
   const deleteImage = (indexToDelete) => {
-    setSelectedFiles(
-      (prevFiles) => prevFiles.filter((_, index) => index !== indexToDelete),
-      s3Urls.filter((_, index) => index !== indexToDelete)
-    );
+    setS3Urls((prev) => prev.filter((_, i) => i !== indexToDelete));
+    setSelectedFiles((prev) => prev.filter((_, i) => i !== indexToDelete));
   };
 
   //s3 저장된 url 반환
   const getPreviewUrl = (index) => {
     return s3Urls[index];
   };
-  console.log(s3Urls);
 
   return (
     <>

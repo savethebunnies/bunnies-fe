@@ -18,13 +18,9 @@ export default function AdoptionList() {
     <div className="pb-9">
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 box-border">
         {rabbits?.map((rabbit) => {
-          const { RABBIT_SEQ } = rabbit;
+          const { id, name } = rabbit;
           return (
-            <Link
-              key={RABBIT_SEQ}
-              scroll={false}
-              href={`/adoption/${RABBIT_SEQ}`}
-            >
+            <Link key={id} scroll={false} href={`/adoption/${name}`}>
               <Card rabbit={rabbit} />
             </Link>
           );

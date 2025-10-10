@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import GenderOptions from "../_components/gender-options";
 import TextArea from "@/components/ui/textarea";
 import Select from "@/components/ui/select";
-// import { postRabbit } from "@/libs/api/post";
+import { postRabbit } from "@/libs/api/post";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import NeuteredOptions from "../_components/neutered-options";
@@ -19,20 +19,7 @@ export default function Page() {
 
   const handleSubmit = async (formData) => {
     const data = Object.fromEntries(formData.entries());
-
-    try {
-      const res = await fetch(`/api/rabbits`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) {
-        throw new Error(`HTTP 에러! 상태 코드: ${res.status}`);
-      }
-    } catch (error) {
-      console.error("데이터 전송 중 오류 발생:", error);
-    }
+    await postRabbit(data);
     setFormKey((prevKey) => prevKey + 1);
     setSelectedDate(null);
     toast.success("토끼 정보가 성공적으로 등록되었습니다!");

@@ -76,22 +76,22 @@ export async function POST(request) {
   }
 }
 
-// export async function GET() {
-//   try {
-//     // 1. Prisma를 사용하여 Supabase DB에서 모든 Rabbit 레코드 조회
-//     const rabbits = await prisma.rabbit.findMany({
-//       orderBy: {
-//         createdAt: "desc",
-//       },
-//     });
-//     return NextResponse.json(rabbits, { status: 200 }); // 200 OK
-//   } catch (error) {
-//     console.error("Error fetching rabbits:", error);
+export async function GET() {
+  try {
+    // 1. Prisma를 사용하여 Supabase DB에서 모든 Rabbit 레코드 조회
+    const rabbits = await prisma.rabbit.findMany({
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+    return NextResponse.json(rabbits, { status: 200 }); // 200 OK
+  } catch (error) {
+    console.error("Error fetching rabbits:", error);
 
-//     // 5. 에러 응답 반환
-//     return NextResponse.json(
-//       { message: "Failed to fetch rabbits.", error: error.message },
-//       { status: 500 } // Internal Server Error
-//     );
-//   }
-// }
+    // 5. 에러 응답 반환
+    return NextResponse.json(
+      { message: "Failed to fetch rabbits.", error: error.message },
+      { status: 500 } // Internal Server Error
+    );
+  }
+}

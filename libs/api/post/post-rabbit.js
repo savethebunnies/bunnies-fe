@@ -1,8 +1,9 @@
-export async function postRabbit(formData) {
+export async function postRabbit(data) {
   try {
-    const res = await fetch(`api/rabbits`, {
+    const res = await fetch(`/api/rabbits`, {
       method: "POST",
-      body: formData,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     });
 
     if (!res.ok) {

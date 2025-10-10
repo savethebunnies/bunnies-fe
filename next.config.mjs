@@ -26,9 +26,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "savethebunnies-images.s3.ap-northeast-2.amazonaws.com",
-        port: "",
-        pathname: "/**",
+        hostname: "s3.ap-northeast-2.amazonaws.com",
+        pathname: "/savethebunnies/**",
       },
     ],
   },
