@@ -14,15 +14,17 @@ export default function AdoptionDetail({ id }) {
     queryFn: () => getRabbitById({ id }),
     staleTime: Infinity,
     cacheTime: Infinity,
+    enabled: !!id,
   });
+  console.log(rabbit, "rabbit");
   return (
     <SectionContainer
-      title={`가족을 기다리고 있어요! 🍀${rabbit?.RABBIT_NM}🍀`}
-      id={`rabbit-${rabbit?.RABBIT_SEQ}`}
+      title={`가족을 기다리고 있어요! 🍀${rabbit?.name}🍀`}
+      id={`rabbit-${rabbit?.id}`}
       className="bg-[var(--green-50)]"
     >
       <div className="max-w-lg mx-auto relative pb-20">
-        <ImageSlider images={rabbit?.RABBIT_IMAGES} />
+        <ImageSlider images={rabbit?.images} />
         <DetailsCard content={rabbit} />
       </div>
       <AdoptionBtn text="입양 신청" />

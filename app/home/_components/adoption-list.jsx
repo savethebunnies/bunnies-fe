@@ -20,9 +20,9 @@ export default function AdoptionList() {
     <div className="py-9">
       <div className="grid grid-flow-col auto-cols-[calc((100%_-_0.5rem)/2)] sm:auto-cols-[calc((100%_-_1.5rem)/4)] gap-2  overflow-x-auto snap-x snap-mandatory box-border">
         {rabbits?.map((rabbit) => {
-          const { RABBIT_SEQ } = rabbit;
+          const { id, name } = rabbit;
           return (
-            <Link key={RABBIT_SEQ} href={`/adoption/${RABBIT_SEQ}`}>
+            <Link key={id} href={`/adoption/${id}`}>
               <Card rabbit={rabbit} />
             </Link>
           );

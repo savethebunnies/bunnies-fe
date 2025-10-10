@@ -84,7 +84,7 @@ export async function GET() {
         createdAt: "desc",
       },
     });
-    return NextResponse.json(rabbits, { status: 200 }); // 200 OK
+    return NextResponse.json(rabbits, { status: 200 });
   } catch (error) {
     console.error("Error fetching rabbits:", error);
 

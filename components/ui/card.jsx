@@ -2,7 +2,6 @@ import Image from "next/image";
 import Badge from "./badge";
 
 export default function Card({ rabbit }) {
-  console.log(rabbit);
   const {
     name,
     gender,

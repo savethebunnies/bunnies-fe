@@ -9,6 +9,7 @@ import { getRabbitById } from "@/libs/api/get";
 
 export default async function Page({ params }) {
   const { id } = await params;
+
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
     queryKey: [RABBIT, id],
