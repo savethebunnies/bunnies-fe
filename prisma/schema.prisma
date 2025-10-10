@@ -97,6 +97,8 @@ model Rabbit {
   age           String
   images        String[]
   weight        String
+  gender        String
+  neutered      String
   character     String
   location      String
   date          String

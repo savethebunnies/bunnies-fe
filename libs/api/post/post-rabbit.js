@@ -1,15 +1,9 @@
-"use server";
-
-import { revalidateTag } from "next/cache";
-
 export async function postRabbit(formData) {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/rabbit`, {
+    const res = await fetch(`api/rabbits`, {
       method: "POST",
       body: formData,
     });
-    revalidateTag("rabbits");
-    revalidateTag("rabbit");
 
     if (!res.ok) {
       throw new Error(`HTTP 에러! 상태 코드: ${res.status}`);

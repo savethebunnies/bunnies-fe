@@ -2,24 +2,38 @@
 
 import { Button } from "@/components/ui/button";
 import { SectionContainer } from "@/components/ui/containers";
-import { Input, FileInput } from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
 import GenderOptions from "../_components/gender-options";
 import TextArea from "@/components/ui/textarea";
 import Select from "@/components/ui/select";
-import { postRabbit } from "@/libs/api/post";
+// import { postRabbit } from "@/libs/api/post";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import NeuteredOptions from "../_components/neutered-options";
 import Calender from "@/components/ui/calendar";
+import FileInput from "@/components/ui/file-input";
 
 export default function Page() {
   const [formKey, setFormKey] = useState(0);
   const [selectedDate, setSelectedDate] = useState(null);
 
   const handleSubmit = async (formData) => {
-    await postRabbit(formData);
-    setFormKey((prevKey) => prevKey + 1);
+    const data = Object.fromEntries(formData.entries());
 
+    try {
+      const res = await fetch(`/api/rabbits`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        throw new Error(`HTTP 에러! 상태 코드: ${res.status}`);
+      }
+    } catch (error) {
+      console.error("데이터 전송 중 오류 발생:", error);
+    }
+    setFormKey((prevKey) => prevKey + 1);
     setSelectedDate(null);
     toast.success("토끼 정보가 성공적으로 등록되었습니다!");
   };
@@ -33,7 +47,7 @@ export default function Page() {
             name="condition"
             options={["입양 공고", "임보 중", "입양 완료"]}
           />
-          <Input label="이름" id="nm" placeholder="이름을 입력해주세요" />
+          <Input label="이름" id="name" placeholder="이름을 입력해주세요" />
           <Input
             label="나이"
             id="age"
