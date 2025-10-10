@@ -6,7 +6,7 @@ import { auth } from "@/libs/utils/auth";
 
 export default async function Page() {
   const session = await auth();
-  const isAdmin = session.user.role === "ADMIN";
+  const isAdmin = session?.user.role === "ADMIN";
   return (
     <>
       <SectionContainer
