@@ -31,9 +31,11 @@ export default function AdoptionDetailModal({ id }) {
 
   return (
     <ModalWrapper isOpen={isOpen} setOpen={setOpen}>
-      <ModalHeader title={rabbit?.RABBIT_CONDITION} />
-      <ImageSlider images={rabbit?.RABBIT_IMAGES} />
-      <DetailsCard content={rabbit} isModal />
+      <ModalHeader title={rabbit?.condition} />
+      <div className="overflow-x-auto max-h-[70vh]">
+        <ImageSlider images={rabbit?.images} />
+        <DetailsCard content={rabbit} isModal />
+      </div>
       <ModalFooter text="입양 신청" onClick={handleformUrlLink} />
     </ModalWrapper>
   );

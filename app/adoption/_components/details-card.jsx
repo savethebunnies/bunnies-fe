@@ -17,8 +17,8 @@ export default function DetailsCard({ content, isModal = false }) {
   return (
     <div
       className={clsx(
-        "flex flex-col gap-[2px] pb-7 text-15 text-[var(--black-50)] text-left",
-        isModal && "overflow-auto max-h-[20vh]"
+        "flex flex-col gap-[2px] pb-7 text-15 text-[var(--black-50)] text-left"
+        // isModal && "overflow-auto max-h-[20vh]"
       )}
     >
       <div className="flex items-center gap-2 mb-3">
