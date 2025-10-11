@@ -18,7 +18,7 @@ export function Nav() {
   return (
     <>
       <header
-        className="fixed top-0 w-full z-10"
+        className="fixed top-0 w-full z-20"
         id="header"
         aria-label="사이트 헤더"
       >
