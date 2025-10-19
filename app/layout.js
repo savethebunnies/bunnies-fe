@@ -22,7 +22,11 @@ export const metadata = {
 
   title: "세이브 더 버니즈",
   description: "유기토끼 지원 커뮤니티 세더버",
-
+  verification: {
+    other: {
+      "naver-site-verification": "9747c598ce2769c3b3e3feb44c13eef499cc8e8b",
+    },
+  },
   openGraph: {
     type: "website",
     url: "https://savethebunnies.kr",
